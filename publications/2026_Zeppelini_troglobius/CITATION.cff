@@ -8,8 +8,8 @@ title: >-
 authors:
   - family-names: Zeppelini
     given-names: Douglas
-    affiliation: Instituto de Biologia do Solo
-    orcid: "https://orcid.org/0000-0000-0000-0000"
+    affiliation: "Universidade Estadual da Paraíba (UEPB)"
+    orcid: ""
 abstract: >-
   Dados moleculares, alinhamentos e árvores filogenéticas utilizados na análise
   de máxima verossimilhança de Troglobius brasiliensis (Collembola: Paronellidae),
@@ -49,7 +49,7 @@ preferred-citation:
   authors:
     - family-names: Zeppelini
       given-names: Douglas
-      affiliation: Instituto de Biologia do Solo
+      affiliation: "Universidade Estadual da Paraíba (UEPB)"
   title: "[Título do artigo — a preencher]"
   journal: "[Periódico — a preencher]"
   year: 2026

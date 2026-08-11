@@ -4,7 +4,9 @@
 
 Dados, scripts e materiais suplementares do artigo:
 
-> Zeppelini, D. et al. (2026). *Título do artigo*. *Periódico*. https://doi.org/[A PREENCHER]
+> Zeppelini, D. (Universidade Estadual da Paraíba — UEPB) et al. (2026). *Título do artigo — a preencher*. *Periódico — a preencher*. https://doi.org/[A PREENCHER]
+>
+> ⚠️ Lista de autores e dados do periódico pendentes de confirmação final do manuscrito.
 
 ## Descrição
 
@@ -81,7 +83,7 @@ iqtree2 -s alinhamento_macse_atual.macse.nt.clean.trimmed.fasta \
 
 ## Licença
 
-Dados: [CC0 1.0](../../LICENSE-CC0.md) | Scripts: [CC BY 4.0](../../LICENSE-CC-BY-4.0.md)
+Este depósito é disponibilizado sob [CC BY 4.0](../../LICENSE-CC-BY-4.0.md). As sequências obtidas do GenBank permanecem sujeitas às políticas de acesso público do NCBI.
 
 ## Como Citar
 
