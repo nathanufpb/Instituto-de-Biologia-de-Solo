@@ -1,17 +1,21 @@
-# Troglobius brasiliensis – coded taxonomy (DELTA)
+# Troglobius brasiliensis / Paronellidae – coded taxonomy (DELTA)
 
-This repository contains the DELTA (DEscription Language for TAxonomy) dataset used for the coded taxonomy of Troglobius brasiliensis.
+This directory contains the DELTA (DEscription Language for TAxonomy) dataset used for the coded taxonomy of *Troglobius brasiliensis* and related Paronellidae taxa.
 
 ## Contents
-- *Troglobius brasiliensis coded taxonomy.dtz*  
-  DELTAfree project file containing the morphological character matrix and coded states for Troglobius brasiliensis.
+- **`Paronellidae coded taxonomy.dtz/`**
+  DELTAfree project folder containing the morphological character matrix and coded states for Paronellidae taxa, including *Troglobius brasiliensis*:
+  - `chars` — morphological character definitions
+  - `items` — coded taxa (species)
+  - `specs` — project specifications
+  - `cnotes` — character notes
+  - `tonat` — natural-language translation file (used to generate descriptions)
 
 ## Software
-The file was created and edited using *FreeDELTA Editor (DELTAfree)*.
+The files were created and edited using *FreeDELTA Editor (DELTAfree)*: https://www.delta-intkey.com/
 
 ## Scope
-The dataset includes coded morphological characters based on specimens collected from the type locality (Limoeiro Cave, Pará, Brazil), and was used to support the taxonomic redescription of Troglobius brasiliensis.
-
+The dataset includes coded morphological characters based on specimens collected from the type locality (Limoeiro Cave, Pará, Brazil), and was used to support the taxonomic treatment of *Troglobius brasiliensis* within Paronellidae.
 
 ## Citation
 If you use this dataset, please cite the corresponding publication:

@@ -4,7 +4,7 @@ message: >-
 type: dataset
 title: >-
   Data and scripts for: Molecular phylogenetics of Troglobius brasiliensis
-  (Collembola: Paronellidae) based on COI gene
+  (Collembola: Paronellidae) based on COI gene, with DELTA coded taxonomy
 authors:
   - family-names: Zeppelini
     given-names: Douglas
@@ -15,7 +15,9 @@ abstract: >-
   de máxima verossimilhança de Troglobius brasiliensis (Collembola: Paronellidae),
   espécie troglobítica, baseada no gene COI. Inclui 54 sequências de Paronellidae
   obtidas do GenBank, alinhamentos gerados com MACSE v2.07, arquivo de partições
-  de códons e árvore filogenética inferida com IQ-TREE com suporte UFBoot.
+  de códons, árvore filogenética inferida com IQ-TREE com suporte UFBoot, e o
+  projeto DELTA (DEscription Language for TAxonomy) com a matriz de caracteres
+  morfológicos codificados para táxons de Paronellidae.
 keywords:
   - Collembola
   - Paronellidae
@@ -28,6 +30,8 @@ keywords:
   - máxima verossimilhança
   - IQ-TREE
   - MACSE
+  - DELTA
+  - taxonomia codificada
   - biologia do solo
 license: CC-BY-4.0
 repository-code: >-

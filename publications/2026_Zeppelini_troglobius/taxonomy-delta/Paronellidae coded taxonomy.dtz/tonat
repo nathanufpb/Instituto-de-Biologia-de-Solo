@@ -1,0 +1,48 @@
+*SHOW Translate into natural language
+*SHOW Generated on 07/08/2026 12:05:00
+*HEADING  - item descriptions.
+*PRINT FILE description.txt
+
+*INPUT FILE specs
+
+*TRANSLATE INTO NATURAL LANGUAGE
+
+
+*REPLACE ANGLE BRACKETS
+*OMIT CHARACTER NUMBERS
+*OMIT INAPPLICABLES
+*OMIT COMMENTS
+*OMIT INNER COMMENTS
+*OMIT FINAL COMMA
+*OMIT TYPESETTING MARKS
+*PRINT WIDTH 80
+
+*EXCLUDE CHARACTERS 5 11-12 14-17 59-67 71-77 86-87
+
+*COMMENT Portuguese Vocabulary Supplied by M.J. Cavalcanti (December 1993) 
+*VOCABULARY 
+#1. ou 
+#2. a 
+#3. e 
+#4. variável 
+#5. desconhecido 
+#6. nao aplicável 
+#7. variante 
+#8. näo codificado 
+#9. nunca 
+#10. mínimo 
+#11. máximo 
+#12. até 
+#13. ou mais 
+#14. . 
+#15. , 
+#16. <alternate comma> , 
+#17. ; 
+#18. <decimal point> , 
+
+*INPUT FILE chars
+
+
+*PRINT HEADING
+
+*INPUT FILE items

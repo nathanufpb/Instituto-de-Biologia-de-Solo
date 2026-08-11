@@ -1,0 +1,405 @@
+*SHOW . Revised 11/08/2026 10:12:03.
+
+*CHARACTER LIST
+
+#1. Molecular characterization/
+       1. Genbank: PV843549-COI/
+       2. Genbank: PZ406350-COI PZ670554-28S/
+
+#2. Pigments (PI)/
+       1. absent/
+       2. present/
+
+#3. Body Color (BC)/
+       1. White/
+       2. Grayish white/
+
+#4. Eye Number (EN)/
+       1. 0+0/
+       2. different combination/
+
+#5. Post-antennal organ (PAO)/
+       1. absent/
+       2. present/
+
+#6. Clypeal area (CI)/
+       1. 1+1 2(1)/
+       2. different combination/
+
+#7. Clypeal area (CII)/
+       1. 1+1 2(1)/
+       2. different combination/
+
+#8. Clypeal area III (CIII)/
+       1. 2+2 4(1)/
+       2. 1+1 2(13)/
+
+#9. Clypeal area IV (CIV)/
+       1. 1+1+1 3(1)/
+       2. 1+1+1 1(1)2(13)/
+
+#10. Labral formula (a+ m + p + pl)/
+       1. 4+5+5+4 18(1)/
+       2. different combination/
+
+#11. Antennal area chaetotaxy (ANTC)/
+       1. 8+8 10(13)6(29)/
+       2. 10+1+10 11(13)2(12b)2(4)6(29)/
+
+#12. Mandibular area chaetotaxy (MD)/
+       1. 10+1+10 21(2)/
+       2. 13+1+13 27(2)/
+
+#13. Maxillary area chaetotaxy dorsal (MX D)/
+       1. 13+13 24(2)2(12a)/
+       2. 14+14 26(2)2(12a)/
+
+#14. Maxillary area chaetotaxy dorsolateral and ventral (MX L+V)/
+       1. 25+25 48(1)2(12b)/
+       2. 19+19 22(1)4(4)12(13)/
+
+#15. Maxillary distal area (LMX D)/
+       1. 4+4 6(1)2(3)/
+       2. 2+2 2(1)2(3)/
+
+#16. Maxillary basal area (LMX B)/
+       1. 1+1 2(1)/
+       2. 2+2 4(1)/
+
+#17. Labial area chaetotaxy dorsal and ventral (LB D+V)/
+       1. 2+2 4(1)/
+       2. 0+0/
+
+#18. Labial chaetae alongside the ventral groove (LBVG)/
+       1. 5+5 10(1)/
+       2. 5+5 6(1)4(13)/
+
+#19. Labial triangle total chaetae (LBT)/
+       1. 10+10 20(1)/
+       2. 9+9 16(1)2(4)/
+
+#20. Labial proximal chaetae and papillae total chaetae (LBP)/
+       1. 24+24 10(1)2(2)10(5)2(6)18(7)6(8/
+       2. 27+27 10(1)2(2)10(5)2(6)24(7)6(8)/
+
+#21. Thorax I (ThI)/
+       1. 0+0/
+       2. different combination/
+
+#22. Thorax II (ThII)/
+       1. 14+14 26(2)2(9)/
+       2. 15+15 28(2)2(9)/
+
+#23. Thorax III (ThIII)/
+       1. 7+7 12(2)2(10)/
+       2. 8+8 14(2)2(10)/
+
+#24. Thorax III ventral (VM)/
+       1. 0+0/
+       2. different combination/
+
+#25. Abdomen I (AbdI)/
+       1. 6+6 10(2)2(9)/
+       2. 8+8 14(2)2(9)/
+
+#26. Abdomen II (AbdII)/
+       1. 13+13 6(2)2(10)4(12a)4(16)10(17)/
+       2. 15+15 14(2)2(10)4(12a)4(16)6(17)/
+
+#27. Abdomen III (AbdIII)/
+       1. 18+18 6(2)2(9)2(10)6(12a)4(16)12(17)4(18)/
+       2. 20+20 16(2)2(10)4(12a)4(16)14(17)/
+
+#28. Abdomen IV (AbdIV)/
+       1. 55+55 38(2)22(10)6(12a)28(16)12(17)4(18)/
+       2. 48+48 60(2)4(10)6(12a)20(16)6(17)/
+
+#29. Abdomen IV posterior area total pseudopores ( AbdIV PSP)/
+       1. 3+3 6(29)/
+       2. different combination/
+
+#30. Abdomen IV area parafurcal total chaetae (AbdIV PF)/
+       1. 24+24 48(16)/
+       2. 28+28 10(1)46(16)/
+
+#31. Abdomen V (AbdV)/
+       1. 15+15 8(2)6(10)4(16)12(18)/
+       2. 21+21 6(10)36(16)/
+
+#32. Abdomen VI (AbdVI)/
+       1. 34+2+34 40(2)30(16)/
+       2. 18+3+18 39(16)/
+
+#33. Antenna I whorl A total chaetae (ANTI A)/
+       1. 10 1(2)9(13)/
+       2. 10 2(1)5(13)3(33)/
+
+#34. Antenna I whorls -I 0 and +I total chaetae (ANTI -0+)/
+       1. 35 3(1)8(2)20(13)4(20)/
+       2. 27 2(2)2(4)8(13)8(18)7(33)/
+
+#35. Antenna I whorl B total chaetae (ANTI B)/
+       1. 2 2(19)/
+       2. 4 3(2)1(19)/
+
+#36. Antenna II whorl A total chaetae (ANTII A)/
+       1. 11 1(2)7(13)2(18)1(20)/
+       2. 11 2(2)4(13)4(20)1(29)/
+
+#37. Antenna II whorls -I 0 and +I total chaetae (ANTII -0+)/
+       1. 92 11(2)58(13)19(18)2(20)2(21)/
+       2. 66 16(2)28(13)22(18)/
+
+#38. Antenna II whorl B total chaetae (ANTII B)/
+       1. 3 1(2)2(19)/
+       2. 2 2(19)/
+
+#39. Antenna III whorl A total chaetae (ANTIII A)/
+       1. 10 4(13)2(20)3(21)/
+       2. 14 6(2)3(18)3(20)2(21)/
+
+#40. Antenna III whorls -I 0 and +I total chaetae (ANTIII -0+)/
+       1. 140 19(2)85(13)34(18)2(21)/
+       2. 46 8(2)20(13)14(18)4(21)/
+
+#41. Antenna III whorl B total chaetae (ANTIII B)/
+       1. 8 8(13)/
+       2. different combination/
+
+#42. Antenna IV A total chaetae (ANTIV A)/
+       1. 324 157(13)61(18)4(20)12(21)57(22)1(24)32(25)/
+       2. 189 29(2)48(13)63(18)2(20)11(22)6(23)1(24)29(25)/
+
+#43. Antenna IV B total chaetae (ANTIV B)/
+       1. 9 9(13)/
+       2. 8 8(13)/
+
+#44. Subcoxa I total chaetae (SCXI)/
+       1. 7 7(14)/
+       2. 5 2(13)3(29)/
+
+#45. Subcoxa II total chaetae (SCXII)/
+       1. 11 4(14)7(16)/
+       2. 11 3(13)8(15)/
+
+#46. Subcoxa III total chaetae (SCXIII)/
+       1. 10 6(14)3(16)1(29)/
+       2. 10 9(14)1(29)/
+
+#47. Coxa I total chaetae (CXI)/
+       1. 12 1(11)10(15)1(29)/
+       2. 12 11(16)1(29)/
+
+#48. Coxa II total chaetae (CXII)/
+       1. 13 1(11)8(14)4(15)/
+       2. 18 13(16)1(15)4(29)/
+
+#49. Coxa III total chaetae (CXIII)/
+       1. 12 1(11)4(14)6(15)1(29)/
+       2. 20 19(16)2(29)/
+
+#50. Trochanter I total chaetae (TRI)/
+       1. 18 2(4)15(14)1(16)/
+       2. 11 7(14)3(16)1(29)/
+
+#51. Trochanter II total chaetae (TRII)/
+       1. 14 2(4)9(14)2(16)1(29)/
+       2. 17 2(4)14(16)1(29)/
+
+#52. Trochanter III total chaetae (TRIII)/
+       1. 27 8(14)2(16)16(26)/
+       2. 53 36(16)17(26)/
+
+#53. Femur I total chaetae (FEI)/
+       1. 55 1(4)44(13)10(16)/
+       2. 50 2(1)48(16)/
+
+#54. Femur II total chaetae (FEII)/
+       1. 62 1(4)53(13)8(16)/
+       2. 56 55(16)1(4)/
+
+#55. Femur III total chaetae (FEIII)/
+       1. 41 17(13)8(16)16(26)/
+       2. 56 55(16)1(19)/
+
+#56. Tibiotarsus I total chaetae (TibI)/
+       1. 95 79(2)15(16)1(31)/
+       2. 49 43(16)5(30)1(32)/
+
+#57. Tibiotarsus II total chaetae (TibII)/
+       1. 110 100(2)9(16)1(31)/
+       2. 50 44(16)5(30)1(32)/
+
+#58. Tibiotarsus III total chaetae (TibIII)/
+       1. 83 70(2)12(16)1(31)/
+       2. 79 72(16)6(30)1(32)/
+
+#59. Pretarsus I pretarsal chaetae (PTI)/
+       1. 2 2(2)/
+       2. different combination/
+
+#60. Pretarsus II pretarsal chaetae (PTII)/
+       1. 2 2(2)/
+       2. different combination/
+
+#61. Pretarsus III pretarsal chaetae (PTIII)/
+       1. 2 2(2)/
+       2. different combination/
+
+#62. Unguis I inner tooth basal: posterior and anterior (UI b.p+b.a)/
+       1. pair equal/
+       2. pair unequal/
+       3. absent/
+
+#63. Unguis I inner tooth: medial (UI m.t)/
+       1. normal/
+       2. absent/
+       3. reduced/
+
+#64. Unguis I inner tooth: apical (UI a.t)/
+       1. normal/
+       2. absent/
+       3. reduced/
+
+#65. Unguis II inner tooth: basal posterior and anterior (UII b.p+b.a)/
+       1. pair equal/
+       2. pair unequal/
+       3. absent/
+
+#66. Unguis II inner tooth: medial (UI m.t)/
+       1. normal/
+       2. absent/
+       3. reduced/
+
+#67. Unguis II inner tooth: apical (UII a.t)/
+       1. normal/
+       2. absent/
+       3. reduced/
+
+#68. Unguis III inner tooth: basal posterior and anterior (UIII b.p+b.a)/
+       1. pair equal/
+       2. pair unequal/
+       3. absent/
+
+#69. Unguis III inner tooth: medial (UIII m.t)/
+       1. normal/
+       2. absent/
+       3. reduced/
+
+#70. Unguis III inner tooth: apical (UIII a.t)/
+       1. normal/
+       2. absent/
+       3. reduced/
+
+#71. Unguiculus I antero-internal lamella (UCI a.i)/
+       1. smooth/
+       2. serrate/
+
+#72. Unguiculus I antero-external lamella (UCI a.e)/
+       1. smooth/
+       2. serrate/
+
+#73. Unguiculus I postero-internal lamella (UCI p.i)/
+       1. smooth/
+       2. serrate/
+
+#74. Unguiculus I postero-external lamella (UCI p.e)/
+       1. with outer tooth/
+       2. smooth/
+       3. serrate/
+
+#75. Unguiculus II antero-internal lamella (UCII a.i)/
+       1. smooth/
+       2. serrate/
+
+#76. Unguiculus II antero-external lamella (UCII a.e)/
+       1. smooth/
+       2. serrate/
+
+#77. Unguiculus II postero-internal lamella (UCII p.i)/
+       1. smooth/
+       2. serrate/
+
+#78. Unguiculus II postero-external lamella (UCII p.e)/
+       1. with outer tooth/
+       2. smooth/
+       3. serrate/
+
+#79. Unguiculus III antero-internal lamella (UCIII a.i)/
+       1. smooth/
+       2. serrate/
+
+#80. Unguiculus III antero-external lamella (UCIII a.e)/
+       1. smooth/
+       2. serrate/
+
+#81. Unguiculus III postero-internal lamella (UCIII p.i)/
+       1. smooth/
+       2. serrate/
+
+#82. Unguiculus III postero-external lamella (UCIII p.e)/
+       1. with outer tooth/
+       2. smooth/
+       3. serrate/
+
+#83. Anterior side total chaetae (AS)/
+       1. 2+2 4(11)/
+       2. different combination/
+
+#84. Lateral flap total chaetae (LF)/
+       1. 3+3 6(1)/
+       2. different combination/
+
+#85. Posterior side total chaetae (PS)/
+       1. 8+2+8 4(4)4(11)10(13)/
+       2. 5+1+5 4(4)3(11)4(13)/
+
+#86. Tenaculum rami (TR)/
+       1. 4+4 teeth/
+       2. different combination/
+
+#87. Tenaculum corpus (a + p) (TC a+p)/
+       1. 1 1(13)/
+       2. different combination/
+
+#88. Anterior manubrium total chaetae (MNA)/
+       1. 1+1 2(13)/
+       2. 46+46 24(11)68(16)/
+
+#89. Posterior manubrium total chaetae (MNP)/
+       1. 67+67 130(13)4(29)/
+       2. 50+50 22(11)74(16)4(29)/
+
+#90. Dental total chaetae: basal (DNB)/
+       1. 6 6(13)/
+       2. 5 1(1)3(16)1(28)/
+
+#91. Dental total chaetae: Central (DNC)/
+       1. 69 10(13)56(27)3(29)/
+       2. 15 6(28)9(34)/
+
+#92. Dental total chaetae: apical (DNA)/
+       1. 3 3(13)/
+       2. 3 1(1)1(33)1(34)/
+
+#93. Dens posterior total chaetae: internal row (DPI)/
+       1. 23 23(27)/
+       2. 5 1(33)4(34)/
+
+#94. Dens posterior total chaetae: medial row (DPM)/
+       1. 25 4(13)18(27)3(29)/
+       2. 5 5(28)/
+
+#95. Dens posterior total chaetae: external row (DPE)/
+       1. 21 3(13)18(27)/
+       2. 6 6(34)/
+
+#96. Mucro inner lamella (MUI)/
+       1. serrate with 14 teeth/
+       2. smooth/
+       3. with one apical tooth/
+
+#97. Mucro outer lamella (MUO)/
+       1. serrate with 14 teeth/
+       2. smooth/
+
