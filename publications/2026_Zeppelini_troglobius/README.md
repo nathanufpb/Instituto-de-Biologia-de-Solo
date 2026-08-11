@@ -1,6 +1,6 @@
 # The Elusive *Troglobius brasiliensis* (Collembola: Paronellidae)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21890449.svg)](https://doi.org/10.5281/zenodo.21890449)
 
 Dados, scripts e materiais suplementares do artigo:
 
