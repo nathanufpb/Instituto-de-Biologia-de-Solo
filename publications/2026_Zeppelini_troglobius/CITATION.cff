@@ -1,0 +1,52 @@
+cff-version: 1.2.0
+message: >-
+  Se você utilizar estes dados, por favor cite usando os metadados deste arquivo.
+type: dataset
+title: >-
+  Data and scripts for: Molecular phylogenetics of Troglobius brasiliensis
+  (Collembola: Paronellidae) based on COI gene
+authors:
+  - family-names: Zeppelini
+    given-names: Douglas
+    affiliation: Instituto de Biologia do Solo
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+abstract: >-
+  Dados moleculares, alinhamentos e árvores filogenéticas utilizados na análise
+  de máxima verossimilhança de Troglobius brasiliensis (Collembola: Paronellidae),
+  espécie troglobítica, baseada no gene COI. Inclui 54 sequências de Paronellidae
+  obtidas do GenBank, alinhamentos gerados com MACSE v2.07, arquivo de partições
+  de códons e árvore filogenética inferida com IQ-TREE com suporte UFBoot.
+keywords:
+  - Collembola
+  - Paronellidae
+  - Troglobius brasiliensis
+  - troglobio
+  - fauna cavernícola
+  - COI
+  - citocromo oxidase
+  - filogenia molecular
+  - máxima verossimilhança
+  - IQ-TREE
+  - MACSE
+  - biologia do solo
+license: CC-BY-4.0
+repository-code: >-
+  https://github.com/nathanufpb/Instituto-de-Biologia-de-Solo
+url: "https://doi.org/10.5281/zenodo.XXXXXXX"
+doi: "10.5281/zenodo.XXXXXXX"
+version: "1.0.0"
+date-released: "2026-08-10"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.XXXXXXX"
+    description: Zenodo DOI for this dataset
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Zeppelini
+      given-names: Douglas
+      affiliation: Instituto de Biologia do Solo
+  title: "[Título do artigo — a preencher]"
+  journal: "[Periódico — a preencher]"
+  year: 2026
+  doi: "[A PREENCHER]"

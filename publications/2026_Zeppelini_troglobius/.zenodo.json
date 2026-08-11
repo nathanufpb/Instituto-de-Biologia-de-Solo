@@ -1,0 +1,42 @@
+{
+  "title": "Data and scripts for: Molecular phylogenetics of Troglobius brasiliensis (Collembola: Paronellidae) based on COI gene",
+  "description": "Dados moleculares, alinhamentos e árvores filogenéticas utilizados na análise de máxima verossimilhança de <em>Troglobius brasiliensis</em> (Collembola: Paronellidae), espécie troglobítica, baseada no gene COI. Inclui 54 sequências de Paronellidae obtidas do GenBank, alinhamentos gerados com MACSE v2.07 (consciente de códons), arquivo de partições de códons e árvore filogenética inferida com IQ-TREE com suporte UFBoot (1000 réplicas).",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "language": "por",
+  "creators": [
+    {
+      "name": "Zeppelini, Douglas",
+      "affiliation": "Instituto de Biologia do Solo",
+      "orcid": ""
+    }
+  ],
+  "contributors": [],
+  "keywords": [
+    "Collembola",
+    "Paronellidae",
+    "Troglobius brasiliensis",
+    "troglobio",
+    "fauna cavernícola",
+    "COI",
+    "citocromo oxidase",
+    "filogenia molecular",
+    "máxima verossimilhança",
+    "IQ-TREE",
+    "MACSE",
+    "biologia do solo"
+  ],
+  "communities": [
+    {"identifier": "zenodo"}
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "",
+      "relation": "isSupplementTo",
+      "scheme": "doi",
+      "resource_type": "publication-article"
+    }
+  ],
+  "notes": "Depósito gerado via GitHub Actions. Para citar, utilize o DOI atribuído pelo Zenodo."
+}

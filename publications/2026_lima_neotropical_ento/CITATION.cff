@@ -1,0 +1,50 @@
+cff-version: 1.2.0
+message: >-
+  Se você utilizar estes dados, por favor cite usando os metadados deste arquivo.
+type: dataset
+title: >-
+  Data and scripts for: Coded Taxonomy Applied to Old and New Descriptions of
+  Mucrosomia (Collembola: Isotomidae): A Bibliographic Revision and New Species
+  of the Genus
+authors:
+  - family-names: Lima
+    given-names: "[Nome]"
+    affiliation: Instituto de Biologia do Solo
+    orcid: "https://orcid.org/0000-0000-0000-0000"
+abstract: >-
+  Arquivos do sistema DELTA (Description Language for Taxonomy) utilizados para
+  a taxonomia codificada do gênero Mucrosomia (Collembola: Isotomidae). Os dados
+  suportam a revisão bibliográfica e a descrição de novas espécies do gênero,
+  publicada em Neotropical Entomology (2026).
+keywords:
+  - Collembola
+  - Isotomidae
+  - Mucrosomia
+  - taxonomia codificada
+  - DELTA
+  - nova espécie
+  - revisão bibliográfica
+  - fauna do solo
+license: CC-BY-4.0
+repository-code: >-
+  https://github.com/nathanufpb/Instituto-de-Biologia-de-Solo
+url: "https://doi.org/10.5281/zenodo.XXXXXXX"
+doi: "10.5281/zenodo.XXXXXXX"
+version: "1.0.0"
+date-released: "2026-08-10"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.XXXXXXX"
+    description: Zenodo DOI for this dataset
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Lima
+      given-names: "[Nome]"
+      affiliation: Instituto de Biologia do Solo
+  title: >-
+    Coded Taxonomy Applied to Old and New Descriptions of Mucrosomia
+    (Collembola: Isotomidae): A Bibliographic Revision and New Species of the Genus
+  journal: Neotropical Entomology
+  year: 2026
+  doi: "[A PREENCHER]"

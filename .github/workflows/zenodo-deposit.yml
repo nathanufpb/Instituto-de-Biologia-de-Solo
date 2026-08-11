@@ -1,0 +1,121 @@
+name: Zenodo Deposit
+
+on:
+  workflow_dispatch:
+    inputs:
+      project:
+        description: 'Nome do projeto (ex: 2026_lima_neotropical_ento)'
+        required: true
+        type: string
+      zenodo_id:
+        description: 'ID Zenodo para nova versão de depósito existente (vazio = novo depósito)'
+        required: false
+        type: string
+      publish:
+        description: 'Publicar depósito imediatamente?'
+        required: true
+        type: boolean
+        default: false
+
+jobs:
+  deposit:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Validate project path
+        run: |
+          PROJECT_PATH="publications/${{ inputs.project }}"
+          if [ ! -d "$PROJECT_PATH" ]; then
+            echo "::error::Diretório '$PROJECT_PATH' não encontrado."
+            exit 1
+          fi
+          if [ ! -f "${PROJECT_PATH}/.zenodo.json" ]; then
+            echo "::error::Arquivo '${PROJECT_PATH}/.zenodo.json' não encontrado. Crie o arquivo de metadados antes de depositar."
+            exit 1
+          fi
+
+      - name: Create ZIP archive
+        run: |
+          zip -r "${{ inputs.project }}.zip" "publications/${{ inputs.project }}/"
+          echo "Arquivo ZIP criado: ${{ inputs.project }}.zip ($(du -sh ${{ inputs.project }}.zip | cut -f1))"
+
+      - name: Create or new-version Zenodo deposit
+        id: create_deposit
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: |
+          PROJECT="${{ inputs.project }}"
+          ZENODO_ID="${{ inputs.zenodo_id }}"
+          METADATA_FILE="publications/${PROJECT}/.zenodo.json"
+
+          if [ -n "$ZENODO_ID" ]; then
+            echo "Criando nova versão do depósito ${ZENODO_ID}..."
+            RESPONSE=$(curl -sf -X POST \
+              "https://zenodo.org/api/deposit/depositions/${ZENODO_ID}/actions/newversion" \
+              -H "Authorization: Bearer ${ZENODO_TOKEN}")
+            DRAFT_URL=$(echo "$RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin)['links']['latest_draft'])")
+            DEPOSIT_ID=$(basename "$DRAFT_URL")
+          else
+            echo "Criando novo depósito..."
+            RESPONSE=$(curl -sf -X POST \
+              "https://zenodo.org/api/deposit/depositions" \
+              -H "Authorization: Bearer ${ZENODO_TOKEN}" \
+              -H "Content-Type: application/json" \
+              --data-binary "@${METADATA_FILE}")
+            DEPOSIT_ID=$(echo "$RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin)['id'])")
+          fi
+
+          echo "deposit_id=${DEPOSIT_ID}" >> "$GITHUB_OUTPUT"
+          echo "Depósito ID: ${DEPOSIT_ID}"
+
+      - name: Upload ZIP to Zenodo
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          DEPOSIT_ID: ${{ steps.create_deposit.outputs.deposit_id }}
+        run: |
+          BUCKET_URL=$(curl -sf \
+            "https://zenodo.org/api/deposit/depositions/${DEPOSIT_ID}" \
+            -H "Authorization: Bearer ${ZENODO_TOKEN}" | \
+            python3 -c "import sys,json; print(json.load(sys.stdin)['links']['bucket'])")
+
+          curl -sf -X PUT \
+            "${BUCKET_URL}/${{ inputs.project }}.zip" \
+            -H "Authorization: Bearer ${ZENODO_TOKEN}" \
+            --upload-file "${{ inputs.project }}.zip"
+
+          echo "Arquivo enviado com sucesso ao depósito ${DEPOSIT_ID}."
+
+      - name: Publish deposit
+        if: ${{ inputs.publish == true }}
+        id: publish
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          DEPOSIT_ID: ${{ steps.create_deposit.outputs.deposit_id }}
+        run: |
+          RESPONSE=$(curl -sf -X POST \
+            "https://zenodo.org/api/deposit/depositions/${DEPOSIT_ID}/actions/publish" \
+            -H "Authorization: Bearer ${ZENODO_TOKEN}")
+          DOI=$(echo "$RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin)['doi'])")
+          echo "doi=${DOI}" >> "$GITHUB_OUTPUT"
+          echo "Depósito publicado: https://doi.org/${DOI}"
+
+      - name: Job summary
+        env:
+          DEPOSIT_ID: ${{ steps.create_deposit.outputs.deposit_id }}
+          DOI: ${{ steps.publish.outputs.doi }}
+        run: |
+          echo "## Depósito Zenodo — ${{ inputs.project }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Campo | Valor |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|-------|-------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Projeto | \`${{ inputs.project }}\` |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Deposit ID | ${DEPOSIT_ID} |" >> "$GITHUB_STEP_SUMMARY"
+          if [ -n "${DOI}" ]; then
+            echo "| DOI | [https://doi.org/${DOI}](https://doi.org/${DOI}) |" >> "$GITHUB_STEP_SUMMARY"
+            echo "| Status | ✅ Publicado |" >> "$GITHUB_STEP_SUMMARY"
+          else
+            echo "| Status | 📝 Rascunho (não publicado) |" >> "$GITHUB_STEP_SUMMARY"
+            echo "| Rascunho | [Visualizar no Zenodo](https://zenodo.org/deposit/${DEPOSIT_ID}) |" >> "$GITHUB_STEP_SUMMARY"
+          fi

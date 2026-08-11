@@ -1,15 +1,13 @@
 # Guia de Início Rápido
 
-Bem-vindo ao repositório do **Instituto de Biologia do Solo e Coleção de Referência da Fauna de Solos**! Este guia ajudará você a começar rapidamente.
+Bem-vindo ao repositório do **Instituto de Biologia do Solo (IBS)**!
 
-## 📋 Visão Geral
+## Visão Geral
 
 Este repositório contém:
-- Conjuntos de dados de biodiversidade de solo
+- Dados, scripts e materiais suplementares de publicações científicas
 - Metadados padronizados (Darwin Core)
-- Scripts e análises reprodutíveis
-- Materiais suplementares de publicações científicas
-- Documentação completa sobre políticas e processos
+- Workflows para depósito no Zenodo com DOI por projeto
 
 ## 🚀 Início Rápido em 5 Minutos
 
@@ -41,14 +39,7 @@ cd Instituto-de-Biologia-de-Solo/data/
 
 ### 4. Citar Apropriadamente
 
-Sempre cite os dados quando usar:
-
-```
-Instituto de Biologia do Solo e Coleção de Referência da Fauna de Solos. (2026). 
-[Título do Dataset]. Zenodo. https://doi.org/10.5281/zenodo.XXXXXXX
-```
-
-Ver [CITATION.cff](CITATION.cff) para citação formal.
+Cada projeto tem seu próprio DOI Zenodo. Veja o `CITATION.cff` dentro da pasta do projeto ou o badge DOI no README do projeto.
 
 ### 5. Contribuir
 
@@ -74,20 +65,19 @@ Quer adicionar dados ou melhorias? Consulte [CONTRIBUTING.md](CONTRIBUTING.md)!
 
 ### Pesquisadores Contribuindo com Dados
 
-**Você quer**: Adicionar seus dados ao repositório
+**Você quer**: Adicionar dados de um novo projeto
 
 **Comece aqui**:
-1. Leia [CONTRIBUTING.md](CONTRIBUTING.md) - Guia completo de contribuição
-2. Use os templates em `/docs/templates/`:
-   - `metadata_template.json` - Para metadados gerais
-   - `publication_structure_template.md` - Para estrutura de publicação
-3. Prepare seus dados seguindo padrões Darwin Core (se aplicável)
-4. Submeta via Pull Request
+1. Leia [CONTRIBUTING.md](CONTRIBUTING.md)
+2. Crie a pasta `publications/YYYY_autor_journal/`
+3. Copie e preencha `docs/templates/zenodo_metadata_template.json` → `.zenodo.json`
+4. Adicione `CITATION.cff` e `README.md` ao projeto
+5. Para depositar no Zenodo: consulte [ZENODO_INTEGRATION.md](ZENODO_INTEGRATION.md)
 
 **Documentos úteis**:
-- [CONTRIBUTING.md](CONTRIBUTING.md) - Como contribuir
+- [ZENODO_INTEGRATION.md](ZENODO_INTEGRATION.md) - Fluxo de DOI por projeto
 - [DATA_POLICY.md](DATA_POLICY.md) - Políticas e padrões
-- `/metadata/schemas/darwin_core_template.csv` - Template Darwin Core
+- `metadata/schemas/darwin_core_template.csv` - Template Darwin Core
 
 ### Desenvolvedores e Cientistas de Dados
 

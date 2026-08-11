@@ -1,0 +1,45 @@
+{
+  "title": "Data and scripts for: [TÍTULO COMPLETO DO ARTIGO]",
+  "description": "Dados, scripts e materiais suplementares referentes ao artigo: '[Título completo. Autores, Ano]'. [Resumo de 2-3 frases descrevendo os dados e análises incluídos.]",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "language": "por",
+  "creators": [
+    {
+      "name": "Sobrenome, Nome",
+      "affiliation": "Instituto de Biologia do Solo",
+      "orcid": "0000-0000-0000-0000"
+    }
+  ],
+  "contributors": [
+    {
+      "name": "Sobrenome, Nome",
+      "type": "DataCollector",
+      "affiliation": "Instituição"
+    }
+  ],
+  "keywords": [
+    "biologia do solo",
+    "fauna edáfica",
+    "[táxon]",
+    "[método]",
+    "[outros termos relevantes]"
+  ],
+  "communities": [
+    {"identifier": "zenodo"}
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/XXXXXXXXXX",
+      "relation": "isSupplementTo",
+      "scheme": "doi",
+      "resource_type": "publication-article"
+    }
+  ],
+  "journal_title": "[Nome do periódico]",
+  "journal_volume": "[volume]",
+  "journal_issue": "[issue]",
+  "journal_pages": "[páginas]",
+  "notes": "Depósito gerado via GitHub Actions. Para citar, utilize o DOI atribuído pelo Zenodo."
+}

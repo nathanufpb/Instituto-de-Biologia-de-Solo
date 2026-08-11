@@ -1,0 +1,39 @@
+{
+  "title": "Data and scripts for: Coded Taxonomy Applied to Old and New Descriptions of Mucrosomia (Collembola: Isotomidae): A Bibliographic Revision and New Species of the Genus",
+  "description": "Dados e materiais suplementares referentes ao artigo: 'Coded Taxonomy Applied to Old and New Descriptions of <em>Mucrosomia</em> (Collembola: Isotomidae): A Bibliographic Revision and New Species of the Genus'. Inclui arquivos do sistema DELTA (Description Language for Taxonomy) para taxonomia codificada do gênero <em>Mucrosomia</em>.",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "language": "por",
+  "creators": [
+    {
+      "name": "Lima, [Nome]",
+      "affiliation": "Instituto de Biologia do Solo",
+      "orcid": ""
+    }
+  ],
+  "contributors": [],
+  "keywords": [
+    "Collembola",
+    "Isotomidae",
+    "Mucrosomia",
+    "taxonomia",
+    "DELTA",
+    "fauna do solo",
+    "nova espécie",
+    "revisão bibliográfica"
+  ],
+  "communities": [
+    {"identifier": "zenodo"}
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "",
+      "relation": "isSupplementTo",
+      "scheme": "doi",
+      "resource_type": "publication-article"
+    }
+  ],
+  "journal_title": "Neotropical Entomology",
+  "notes": "Depósito gerado automaticamente via GitHub Actions. Para citar este conjunto de dados, utilize o DOI atribuído pelo Zenodo."
+}
