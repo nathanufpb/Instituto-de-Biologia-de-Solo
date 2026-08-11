@@ -1,16 +1,18 @@
 {
-  "title": "Data and scripts for: Molecular phylogenetics of Troglobius brasiliensis (Collembola: Paronellidae) based on COI gene, with DELTA coded taxonomy",
-  "description": "Dados moleculares, alinhamentos e árvores filogenéticas utilizados na análise de máxima verossimilhança de <em>Troglobius brasiliensis</em> (Collembola: Paronellidae), espécie troglobítica, baseada no gene COI. Inclui 54 sequências de Paronellidae obtidas do GenBank, alinhamentos gerados com MACSE v2.07 (consciente de códons), arquivo de partições de códons, árvore filogenética inferida com IQ-TREE com suporte UFBoot (1000 réplicas), e o projeto DELTA (DEscription Language for TAxonomy) com a matriz de caracteres morfológicos codificados para táxons de Paronellidae.",
+  "title": "Data and scripts for: The elusive Troglobius brasiliensis (Collembola: Paronellidae), a critically endangered species rediscovered and redescribed in its habitat and food web",
+  "description": "Dados moleculares, alinhamentos e árvores filogenéticas utilizados no estudo da redescoberta e redescrição de <em>Troglobius brasiliensis</em> (Collembola: Paronellidae), espécie troglobítica criticamente ameaçada, em seu hábitat e teia alimentar. Inclui 54 sequências de Paronellidae obtidas do GenBank, alinhamentos gerados com MACSE v2.07 (consciente de códons), arquivo de partições de códons, árvore filogenética de máxima verossimilhança inferida com IQ-TREE com suporte UFBoot (1000 réplicas), e o projeto DELTA (DEscription Language for TAxonomy) com a matriz de caracteres morfológicos codificados para táxons de Paronellidae. Artigo em revisão.",
   "upload_type": "dataset",
   "access_right": "open",
   "license": "cc-by-4.0",
   "language": "por",
   "creators": [
-    {
-      "name": "Zeppelini, Douglas",
-      "affiliation": "Universidade Estadual da Paraíba (UEPB)",
-      "orcid": ""
-    }
+    {"name": "Zeppelini, Douglas", "affiliation": "Universidade Estadual da Paraíba (UEPB)"},
+    {"name": "de Brito, Roniere Andrade", "affiliation": "Instituto de Biologia do Solo"},
+    {"name": "Ferreira, Aila Soares", "affiliation": "Instituto de Biologia do Solo"},
+    {"name": "Lopes, Bruna Carolline Honório", "affiliation": "Instituto de Biologia do Solo"},
+    {"name": "Brito, Nathan Paiva", "affiliation": "Instituto de Biologia do Solo"},
+    {"name": "de Oliveira-Neto, Misael Augusto", "affiliation": "Instituto de Biologia do Solo"},
+    {"name": "de Lima, Estevam Cipriano Araujo", "affiliation": "Instituto de Biologia do Solo"}
   ],
   "contributors": [],
   "keywords": [
@@ -19,6 +21,11 @@
     "Troglobius brasiliensis",
     "troglobio",
     "fauna cavernícola",
+    "espécie criticamente ameaçada",
+    "redescoberta",
+    "redescrição",
+    "teia alimentar",
+    "ecossistema cárstico",
     "COI",
     "citocromo oxidase",
     "filogenia molecular",
@@ -32,5 +39,5 @@
   "communities": [
     {"identifier": "zenodo"}
   ],
-  "notes": "Depósito gerado via GitHub Actions. Para citar, utilize o DOI atribuído pelo Zenodo. Lista de autores pendente de confirmação final do manuscrito; atualmente reflete apenas o autor correspondente."
+  "notes": "Depósito gerado via GitHub Actions. Para citar, utilize o DOI atribuído pelo Zenodo. Artigo em revisão; DOI do artigo será adicionado após a publicação."
 }

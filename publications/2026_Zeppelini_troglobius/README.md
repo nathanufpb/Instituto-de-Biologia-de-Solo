@@ -1,16 +1,16 @@
-# Filogenia Molecular de *Troglobius brasiliensis* (Collembola: Paronellidae)
+# The Elusive *Troglobius brasiliensis* (Collembola: Paronellidae)
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
 
 Dados, scripts e materiais suplementares do artigo:
 
-> Zeppelini, D. (Universidade Estadual da Paraíba — UEPB) et al. (2026). *Título do artigo — a preencher*. *Periódico — a preencher*. https://doi.org/[A PREENCHER]
+> Zeppelini, D., de Brito, R. A., Ferreira, A. S., Lopes, B. C. H., Brito, N. P., de Oliveira-Neto, M. A., & de Lima, E. C. A. (em revisão). The elusive *Troglobius brasiliensis* (Collembola: Paronellidae), a critically endangered species rediscovered and redescribed in its habitat and food web.
 >
-> ⚠️ Lista de autores e dados do periódico pendentes de confirmação final do manuscrito.
+> ⚠️ Artigo em processo de revisão por pares. DOI e dados do periódico serão adicionados após a publicação.
 
 ## Descrição
 
-Este repositório contém os dados moleculares e scripts utilizados para a análise filogenética de *Troglobius brasiliensis*, uma espécie troglobítica de Collembola (Paronellidae), baseada no gene COI (citocromo oxidase I). A árvore de máxima verossimilhança foi inferida com 54 sequências de Paronellidae obtidas do GenBank, incluindo uma nova sequência gerada neste estudo. Inclui também o conjunto de dados **DELTA** com a taxonomia codificada de Paronellidae.
+Este repositório contém os dados moleculares e scripts utilizados no estudo da redescoberta e redescrição de *Troglobius brasiliensis*, espécie troglobítica de Collembola (Paronellidae) criticamente ameaçada, em seu hábitat e teia alimentar. A árvore de máxima verossimilhança foi inferida com 54 sequências de Paronellidae obtidas do GenBank, incluindo uma nova sequência gerada neste estudo. Inclui também o conjunto de dados **DELTA** com a taxonomia codificada de Paronellidae.
 
 ## Conteúdo
 
