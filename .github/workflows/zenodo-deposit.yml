@@ -8,7 +8,11 @@ on:
         required: true
         type: string
       zenodo_id:
-        description: 'ID Zenodo para nova versão de depósito existente (vazio = novo depósito)'
+        description: 'ID Zenodo para nova versão de depósito PUBLICADO (vazio = novo depósito)'
+        required: false
+        type: string
+      draft_id:
+        description: 'ID de um RASCUNHO (draft) ainda não publicado para atualizar in-place (metadados + arquivo)'
         required: false
         type: string
       publish:
@@ -48,12 +52,26 @@ jobs:
         run: |
           PROJECT="${{ inputs.project }}"
           ZENODO_ID="${{ inputs.zenodo_id }}"
+          DRAFT_ID="${{ inputs.draft_id }}"
           METADATA_FILE="publications/${PROJECT}/.zenodo.json"
 
           # A API do Zenodo espera os campos aninhados sob a chave "metadata"
           python3 -c "import json; d=json.load(open('${METADATA_FILE}')); json.dump({'metadata': d}, open('payload.json', 'w'))"
 
-          if [ -n "$ZENODO_ID" ]; then
+          if [ -n "$DRAFT_ID" ]; then
+            echo "Atualizando rascunho existente ${DRAFT_ID} (in-place)..."
+            UPDATE_CODE=$(curl -s -o update_response.json -w "%{http_code}" -X PUT \
+              "https://zenodo.org/api/deposit/depositions/${DRAFT_ID}" \
+              -H "Authorization: Bearer ${ZENODO_TOKEN}" \
+              -H "Content-Type: application/json" \
+              --data-binary "@payload.json")
+            if [ "$UPDATE_CODE" -ge 300 ]; then
+              echo "::error::Falha ao atualizar rascunho, HTTP ${UPDATE_CODE}:"
+              cat update_response.json
+              exit 1
+            fi
+            DEPOSIT_ID="$DRAFT_ID"
+          elif [ -n "$ZENODO_ID" ]; then
             echo "Criando nova versão do depósito ${ZENODO_ID}..."
             HTTP_CODE=$(curl -s -o response.json -w "%{http_code}" -X POST \
               "https://zenodo.org/api/deposit/depositions/${ZENODO_ID}/actions/newversion" \
