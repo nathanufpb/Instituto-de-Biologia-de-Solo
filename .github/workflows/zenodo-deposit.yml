@@ -52,19 +52,29 @@ jobs:
 
           if [ -n "$ZENODO_ID" ]; then
             echo "Criando nova versão do depósito ${ZENODO_ID}..."
-            RESPONSE=$(curl -sf -X POST \
+            HTTP_CODE=$(curl -s -o response.json -w "%{http_code}" -X POST \
               "https://zenodo.org/api/deposit/depositions/${ZENODO_ID}/actions/newversion" \
               -H "Authorization: Bearer ${ZENODO_TOKEN}")
-            DRAFT_URL=$(echo "$RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin)['links']['latest_draft'])")
+            if [ "$HTTP_CODE" -ge 300 ]; then
+              echo "::error::Zenodo API retornou HTTP ${HTTP_CODE}:"
+              cat response.json
+              exit 1
+            fi
+            DRAFT_URL=$(python3 -c "import json; print(json.load(open('response.json'))['links']['latest_draft'])")
             DEPOSIT_ID=$(basename "$DRAFT_URL")
           else
             echo "Criando novo depósito..."
-            RESPONSE=$(curl -sf -X POST \
+            HTTP_CODE=$(curl -s -o response.json -w "%{http_code}" -X POST \
               "https://zenodo.org/api/deposit/depositions" \
               -H "Authorization: Bearer ${ZENODO_TOKEN}" \
               -H "Content-Type: application/json" \
               --data-binary "@${METADATA_FILE}")
-            DEPOSIT_ID=$(echo "$RESPONSE" | python3 -c "import sys,json; print(json.load(sys.stdin)['id'])")
+            if [ "$HTTP_CODE" -ge 300 ]; then
+              echo "::error::Zenodo API retornou HTTP ${HTTP_CODE}:"
+              cat response.json
+              exit 1
+            fi
+            DEPOSIT_ID=$(python3 -c "import json; print(json.load(open('response.json'))['id'])")
           fi
 
           echo "deposit_id=${DEPOSIT_ID}" >> "$GITHUB_OUTPUT"
@@ -75,15 +85,25 @@ jobs:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
           DEPOSIT_ID: ${{ steps.create_deposit.outputs.deposit_id }}
         run: |
-          BUCKET_URL=$(curl -sf \
+          HTTP_CODE=$(curl -s -o response.json -w "%{http_code}" \
             "https://zenodo.org/api/deposit/depositions/${DEPOSIT_ID}" \
-            -H "Authorization: Bearer ${ZENODO_TOKEN}" | \
-            python3 -c "import sys,json; print(json.load(sys.stdin)['links']['bucket'])")
+            -H "Authorization: Bearer ${ZENODO_TOKEN}")
+          if [ "$HTTP_CODE" -ge 300 ]; then
+            echo "::error::Zenodo API retornou HTTP ${HTTP_CODE}:"
+            cat response.json
+            exit 1
+          fi
+          BUCKET_URL=$(python3 -c "import json; print(json.load(open('response.json'))['links']['bucket'])")
 
-          curl -sf -X PUT \
+          UPLOAD_CODE=$(curl -s -o upload_response.json -w "%{http_code}" -X PUT \
             "${BUCKET_URL}/${{ inputs.project }}.zip" \
             -H "Authorization: Bearer ${ZENODO_TOKEN}" \
-            --upload-file "${{ inputs.project }}.zip"
+            --upload-file "${{ inputs.project }}.zip")
+          if [ "$UPLOAD_CODE" -ge 300 ]; then
+            echo "::error::Falha no upload, HTTP ${UPLOAD_CODE}:"
+            cat upload_response.json
+            exit 1
+          fi
 
           echo "Arquivo enviado com sucesso ao depósito ${DEPOSIT_ID}."
 
