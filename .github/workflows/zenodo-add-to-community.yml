@@ -52,6 +52,20 @@ jobs:
           cat response.json >> "$GITHUB_STEP_SUMMARY"
           echo '```' >> "$GITHUB_STEP_SUMMARY"
 
+      - name: Debug request status
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: |
+          REQUEST_ID="${{ inputs.accept_request_id }}"
+          if [ -z "$REQUEST_ID" ]; then
+            REQUEST_ID="${{ steps.submit.outputs.request_id }}"
+          fi
+          if [ -n "$REQUEST_ID" ]; then
+            echo "Consultando estado da solicitação ${REQUEST_ID}..."
+            curl -s "https://zenodo.org/api/requests/${REQUEST_ID}" \
+              -H "Authorization: Bearer ${ZENODO_TOKEN}" | python3 -m json.tool || true
+          fi
+
       - name: Accept community inclusion request
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
