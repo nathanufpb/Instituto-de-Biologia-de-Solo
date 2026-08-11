@@ -30,13 +30,5 @@
   "communities": [
     {"identifier": "zenodo"}
   ],
-  "related_identifiers": [
-    {
-      "identifier": "",
-      "relation": "isSupplementTo",
-      "scheme": "doi",
-      "resource_type": "publication-article"
-    }
-  ],
   "notes": "Depósito gerado via GitHub Actions. Para citar, utilize o DOI atribuído pelo Zenodo."
 }

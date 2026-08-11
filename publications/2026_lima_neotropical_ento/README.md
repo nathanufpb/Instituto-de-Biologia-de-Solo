@@ -4,11 +4,11 @@
 
 Dados e materiais suplementares do artigo:
 
-> Lima, [Nome] et al. (2026). Coded Taxonomy Applied to Old and New Descriptions of *Mucrosomia* (Collembola: Isotomidae): a Bibliographic Revision and New Species of the Genus. *Neotropical Entomology*. https://doi.org/[A PREENCHER]
+> de Lima, E. C. A., Ferreira, A. S., de Oliveira-Neto, M. A., Lopes, B. C. H., Brito, N. P., de Brito, R. A., & Zeppelini, D. (2026). Coded Taxonomy Applied to Old and New Descriptions of *Mucrosomia* (Collembola: Isotomidae): A Bibliographic Revision and New Species of the Genus. *Neotropical Entomology*, 55, 55. https://doi.org/10.1007/s13744-026-01397-4
 
 ## Descrição
 
-Este repositório contém os arquivos do sistema **DELTA** (*Description Language for Taxonomy*) utilizados para a taxonomia codificada do gênero *Mucrosomia* (Collembola: Isotomidae). Os dados suportam a revisão bibliográfica e a descrição de novas espécies do gênero.
+Este repositório contém os arquivos do sistema **DELTA** (*Description Language for Taxonomy*) utilizados para a taxonomia codificada do gênero *Mucrosomia* (Collembola: Isotomidae). Os dados suportam a primeira revisão bibliográfica abrangente do gênero e a descrição de duas novas espécies: *Mucrosomia janssensi* sp. nov. e *Mucrosomia potapovi* sp. nov.
 
 ## Conteúdo
 

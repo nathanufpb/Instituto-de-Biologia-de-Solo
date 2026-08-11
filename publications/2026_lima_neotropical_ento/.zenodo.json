@@ -1,16 +1,18 @@
 {
   "title": "Data and scripts for: Coded Taxonomy Applied to Old and New Descriptions of Mucrosomia (Collembola: Isotomidae): A Bibliographic Revision and New Species of the Genus",
-  "description": "Dados e materiais suplementares referentes ao artigo: 'Coded Taxonomy Applied to Old and New Descriptions of <em>Mucrosomia</em> (Collembola: Isotomidae): A Bibliographic Revision and New Species of the Genus'. Inclui arquivos do sistema DELTA (Description Language for Taxonomy) para taxonomia codificada do gênero <em>Mucrosomia</em>.",
+  "description": "Dados e materiais suplementares referentes ao artigo: 'Coded Taxonomy Applied to Old and New Descriptions of <em>Mucrosomia</em> (Collembola: Isotomidae): A Bibliographic Revision and New Species of the Genus' (de Lima et al., 2026, Neotropical Entomology, DOI: 10.1007/s13744-026-01397-4). Inclui arquivos do sistema DELTA (Description Language for Taxonomy) para a taxonomia codificada do gênero <em>Mucrosomia</em>, incluindo a descrição de duas novas espécies: <em>Mucrosomia janssensi</em> sp. nov. e <em>Mucrosomia potapovi</em> sp. nov.",
   "upload_type": "dataset",
   "access_right": "open",
   "license": "cc-by-4.0",
   "language": "por",
   "creators": [
-    {
-      "name": "Lima, [Nome]",
-      "affiliation": "Instituto de Biologia do Solo",
-      "orcid": ""
-    }
+    {"name": "de Lima, Estevam Cipriano Araujo", "affiliation": "Instituto de Biologia do Solo"},
+    {"name": "Ferreira, Aila Soares", "affiliation": "Instituto de Biologia do Solo"},
+    {"name": "de Oliveira-Neto, Misael Augusto", "affiliation": "Instituto de Biologia do Solo"},
+    {"name": "Lopes, Bruna Carolline Honório", "affiliation": "Instituto de Biologia do Solo"},
+    {"name": "Brito, Nathan Paiva", "affiliation": "Instituto de Biologia do Solo"},
+    {"name": "de Brito, Roniere Andrade", "affiliation": "Instituto de Biologia do Solo"},
+    {"name": "Zeppelini, Douglas", "affiliation": "Instituto de Biologia do Solo"}
   ],
   "contributors": [],
   "keywords": [
@@ -21,19 +23,26 @@
     "DELTA",
     "fauna do solo",
     "nova espécie",
-    "revisão bibliográfica"
+    "revisão bibliográfica",
+    "Arthropoda",
+    "Hexapoda",
+    "Morphological coding",
+    "Taxonomic standardization"
   ],
   "communities": [
     {"identifier": "zenodo"}
   ],
+  "journal_title": "Neotropical Entomology",
+  "journal_volume": "55",
+  "journal_issue": "1",
+  "journal_pages": "55",
   "related_identifiers": [
     {
-      "identifier": "",
+      "identifier": "https://doi.org/10.1007/s13744-026-01397-4",
       "relation": "isSupplementTo",
       "scheme": "doi",
       "resource_type": "publication-article"
     }
   ],
-  "journal_title": "Neotropical Entomology",
   "notes": "Depósito gerado automaticamente via GitHub Actions. Para citar este conjunto de dados, utilize o DOI atribuído pelo Zenodo."
 }

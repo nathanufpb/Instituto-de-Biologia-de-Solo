@@ -7,15 +7,33 @@ title: >-
   Mucrosomia (Collembola: Isotomidae): A Bibliographic Revision and New Species
   of the Genus
 authors:
-  - family-names: Lima
-    given-names: "[Nome]"
+  - family-names: "de Lima"
+    given-names: "Estevam Cipriano Araujo"
     affiliation: Instituto de Biologia do Solo
-    orcid: "https://orcid.org/0000-0000-0000-0000"
+  - family-names: Ferreira
+    given-names: "Aila Soares"
+    affiliation: Instituto de Biologia do Solo
+  - family-names: "de Oliveira-Neto"
+    given-names: "Misael Augusto"
+    affiliation: Instituto de Biologia do Solo
+  - family-names: Lopes
+    given-names: "Bruna Carolline Honório"
+    affiliation: Instituto de Biologia do Solo
+  - family-names: Brito
+    given-names: "Nathan Paiva"
+    affiliation: Instituto de Biologia do Solo
+  - family-names: "de Brito"
+    given-names: "Roniere Andrade"
+    affiliation: Instituto de Biologia do Solo
+  - family-names: Zeppelini
+    given-names: Douglas
+    affiliation: Instituto de Biologia do Solo
 abstract: >-
   Arquivos do sistema DELTA (Description Language for Taxonomy) utilizados para
   a taxonomia codificada do gênero Mucrosomia (Collembola: Isotomidae). Os dados
-  suportam a revisão bibliográfica e a descrição de novas espécies do gênero,
-  publicada em Neotropical Entomology (2026).
+  suportam a revisão bibliográfica e a descrição de duas novas espécies do
+  gênero (Mucrosomia janssensi sp. nov. e Mucrosomia potapovi sp. nov.),
+  publicada em Neotropical Entomology (2026), DOI: 10.1007/s13744-026-01397-4.
 keywords:
   - Collembola
   - Isotomidae
@@ -39,12 +57,34 @@ identifiers:
 preferred-citation:
   type: article
   authors:
-    - family-names: Lima
-      given-names: "[Nome]"
+    - family-names: "de Lima"
+      given-names: "Estevam Cipriano Araujo"
+      affiliation: Instituto de Biologia do Solo
+    - family-names: Ferreira
+      given-names: "Aila Soares"
+      affiliation: Instituto de Biologia do Solo
+    - family-names: "de Oliveira-Neto"
+      given-names: "Misael Augusto"
+      affiliation: Instituto de Biologia do Solo
+    - family-names: Lopes
+      given-names: "Bruna Carolline Honório"
+      affiliation: Instituto de Biologia do Solo
+    - family-names: Brito
+      given-names: "Nathan Paiva"
+      affiliation: Instituto de Biologia do Solo
+    - family-names: "de Brito"
+      given-names: "Roniere Andrade"
+      affiliation: Instituto de Biologia do Solo
+    - family-names: Zeppelini
+      given-names: Douglas
       affiliation: Instituto de Biologia do Solo
   title: >-
     Coded Taxonomy Applied to Old and New Descriptions of Mucrosomia
     (Collembola: Isotomidae): A Bibliographic Revision and New Species of the Genus
   journal: Neotropical Entomology
   year: 2026
-  doi: "[A PREENCHER]"
+  volume: "55"
+  issue: "1"
+  pages: "55"
+  doi: "10.1007/s13744-026-01397-4"
+  url: "https://doi.org/10.1007/s13744-026-01397-4"

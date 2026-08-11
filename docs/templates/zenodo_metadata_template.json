@@ -29,17 +29,10 @@
   "communities": [
     {"identifier": "zenodo"}
   ],
-  "related_identifiers": [
-    {
-      "identifier": "https://doi.org/XXXXXXXXXX",
-      "relation": "isSupplementTo",
-      "scheme": "doi",
-      "resource_type": "publication-article"
-    }
-  ],
   "journal_title": "[Nome do periódico]",
   "journal_volume": "[volume]",
   "journal_issue": "[issue]",
   "journal_pages": "[páginas]",
-  "notes": "Depósito gerado via GitHub Actions. Para citar, utilize o DOI atribuído pelo Zenodo."
+  "notes": "Depósito gerado via GitHub Actions. Para citar, utilize o DOI atribuído pelo Zenodo.",
+  "_comment_related_identifiers": "Adicione 'related_identifiers' somente depois que o DOI do artigo existir. Campo vazio causa erro 400 na API Zenodo. Exemplo: [{\"identifier\": \"https://doi.org/10.xxxx/xxxx\", \"relation\": \"isSupplementTo\", \"scheme\": \"doi\", \"resource_type\": \"publication-article\"}]"
 }
