@@ -37,7 +37,7 @@
     "biologia do solo"
   ],
   "communities": [
-    {"identifier": "zenodo"}
+    {"identifier": "ibs"}
   ],
   "notes": "Depósito gerado via GitHub Actions. Para citar, utilize o DOI atribuído pelo Zenodo. Artigo em revisão; DOI do artigo será adicionado após a publicação."
 }

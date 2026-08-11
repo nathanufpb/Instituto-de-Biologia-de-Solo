@@ -1,0 +1,40 @@
+{
+  "title": "Instituto de Biologia do Solo — Coleção de Datasets e Publicações Científicas",
+  "description": "Registro guarda-chuva (umbrella record) que agrega e referencia todos os conjuntos de dados científicos publicados pelo Instituto de Biologia do Solo (IBS) no Zenodo. Cada publicação do instituto recebe um depósito independente com DOI próprio, referenciado a partir deste registro por meio da relação 'HasPart'. Este registro serve como ponto de entrada institucional para a descoberta de todos os datasets associados ao IBS.",
+  "upload_type": "other",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "language": "por",
+  "creators": [
+    {"name": "Instituto de Biologia do Solo", "affiliation": "Instituto de Biologia do Solo"}
+  ],
+  "contributors": [],
+  "keywords": [
+    "biologia do solo",
+    "fauna edáfica",
+    "coleção de dados",
+    "ciência aberta",
+    "taxonomia",
+    "ecologia do solo",
+    "biodiversidade",
+    "reprodutibilidade"
+  ],
+  "communities": [
+    {"identifier": "ibs"}
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.21881749",
+      "relation": "hasPart",
+      "scheme": "doi",
+      "resource_type": "dataset"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.21890449",
+      "relation": "hasPart",
+      "scheme": "doi",
+      "resource_type": "dataset"
+    }
+  ],
+  "notes": "Depósito guarda-chuva gerado via GitHub Actions. Novos datasets do IBS devem ser adicionados aqui como 'hasPart' e referenciar este DOI como 'isPartOf' em seus próprios metadados."
+}

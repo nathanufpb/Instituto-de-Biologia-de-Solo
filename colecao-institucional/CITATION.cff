@@ -1,0 +1,46 @@
+cff-version: 1.2.0
+message: >-
+  Se você utilizar este repositório institucional, por favor cite os datasets
+  individuais referenciados abaixo.
+type: dataset
+title: >-
+  Instituto de Biologia do Solo — Coleção de Datasets e Publicações Científicas
+authors:
+  - name: "Instituto de Biologia do Solo"
+abstract: >-
+  Registro guarda-chuva (umbrella record) que agrega e referencia todos os
+  conjuntos de dados científicos publicados pelo Instituto de Biologia do Solo
+  (IBS) no Zenodo. Cada publicação do instituto recebe um depósito
+  independente com DOI próprio, referenciado a partir deste registro.
+keywords:
+  - biologia do solo
+  - fauna edáfica
+  - coleção de dados
+  - ciência aberta
+  - taxonomia
+  - ecologia do solo
+  - biodiversidade
+  - reprodutibilidade
+license: CC-BY-4.0
+repository-code: >-
+  https://github.com/nathanufpb/Instituto-de-Biologia-de-Solo
+url: "https://doi.org/10.5281/zenodo.PENDENTE"
+doi: "10.5281/zenodo.PENDENTE"
+version: "1.0.0"
+date-released: "2026-08-11"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.PENDENTE"
+    description: Zenodo DOI for this umbrella record
+references:
+  - type: dataset
+    title: >-
+      Coded Taxonomy Applied to Old and New Descriptions of Mucrosomia
+      (Collembola: Isotomidae): A Bibliographic Revision and New Species of the Genus
+    doi: "10.5281/zenodo.21881749"
+  - type: dataset
+    title: >-
+      The elusive Troglobius brasiliensis (Collembola: Paronellidae), a
+      critically endangered species rediscovered and redescribed in its
+      habitat and food web
+    doi: "10.5281/zenodo.21890449"

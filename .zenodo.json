@@ -34,10 +34,7 @@
   "access_right": "open",
   "communities": [
     {
-      "identifier": "biosyslit"
-    },
-    {
-      "identifier": "zenodo"
+      "identifier": "ibs"
     }
   ],
   "grants": [],
