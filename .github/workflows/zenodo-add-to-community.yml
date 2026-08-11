@@ -4,12 +4,16 @@ on:
   workflow_dispatch:
     inputs:
       record_id:
-        description: 'ID do record Zenodo já publicado (ex: 21881749)'
-        required: true
+        description: 'ID do record Zenodo já publicado (ex: 21881749). Deixe vazio se for apenas aceitar uma solicitação existente.'
+        required: false
         type: string
       community_slug:
         description: 'Slug da community Zenodo (ex: ibs)'
         required: true
+        type: string
+      accept_request_id:
+        description: 'ID de uma solicitação de inclusão já existente para aceitar diretamente (pula a submissão)'
+        required: false
         type: string
 
 jobs:
@@ -17,6 +21,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Add record to community
+        id: submit
+        if: ${{ inputs.accept_request_id == '' }}
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: |
@@ -37,8 +43,39 @@ jobs:
             exit 1
           fi
 
-          echo "## Record ${RECORD_ID} adicionado à community '${COMMUNITY_SLUG}'" >> "$GITHUB_STEP_SUMMARY"
+          REQUEST_ID=$(python3 -c "import json; d=json.load(open('response.json')); print(d['processed'][0]['request']['id'])" 2>/dev/null || echo "")
+          echo "request_id=${REQUEST_ID}" >> "$GITHUB_OUTPUT"
+
+          echo "## Record ${RECORD_ID} submetido à community '${COMMUNITY_SLUG}'" >> "$GITHUB_STEP_SUMMARY"
           echo "" >> "$GITHUB_STEP_SUMMARY"
           echo '```json' >> "$GITHUB_STEP_SUMMARY"
           cat response.json >> "$GITHUB_STEP_SUMMARY"
           echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Accept community inclusion request
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: |
+          REQUEST_ID="${{ inputs.accept_request_id }}"
+          if [ -z "$REQUEST_ID" ]; then
+            REQUEST_ID="${{ steps.submit.outputs.request_id }}"
+          fi
+          if [ -z "$REQUEST_ID" ]; then
+            echo "::error::Nenhum request_id disponível para aceitar."
+            exit 1
+          fi
+
+          HTTP_CODE=$(curl -s -o accept_response.json -w "%{http_code}" -X POST \
+            "https://zenodo.org/api/requests/${REQUEST_ID}/actions/accept" \
+            -H "Authorization: Bearer ${ZENODO_TOKEN}" \
+            -H "Content-Type: application/json")
+
+          echo "HTTP status (accept): ${HTTP_CODE}"
+          cat accept_response.json
+
+          if [ "$HTTP_CODE" -ge 300 ]; then
+            echo "::error::Falha ao aceitar solicitação ${REQUEST_ID}, HTTP ${HTTP_CODE}"
+            exit 1
+          fi
+
+          echo "## Solicitação ${REQUEST_ID} aceita ✅" >> "$GITHUB_STEP_SUMMARY"
