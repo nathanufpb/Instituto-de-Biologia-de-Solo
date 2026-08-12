@@ -10,6 +10,7 @@ Este é o **registro guarda-chuva** (umbrella record) do Instituto de Biologia d
 |---------|-----|-----------|
 | [2026_lima_neotropical_ento](../publications/2026_lima_neotropical_ento/) | [10.5281/zenodo.21881749](https://doi.org/10.5281/zenodo.21881749) | Taxonomia codificada de *Mucrosomia* (Collembola: Isotomidae) |
 | [2026_Zeppelini_troglobius](../publications/2026_Zeppelini_troglobius/) | [10.5281/zenodo.21890449](https://doi.org/10.5281/zenodo.21890449) | Redescoberta e redescrição de *Troglobius brasiliensis* (Collembola: Paronellidae) |
+| [2026_Lopes_cyphoderus_protocolo](../publications/2026_Lopes_cyphoderus_protocolo/) | [10.5281/zenodo.21907598](https://doi.org/10.5281/zenodo.21907598) | Protocolos de bioindicação e ecotoxicologia neotropical com nova espécie-modelo (*Cyphoderus*) |
 
 ## Como funciona a relação entre os registros
 

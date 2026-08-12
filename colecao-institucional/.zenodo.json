@@ -34,6 +34,12 @@
       "relation": "hasPart",
       "scheme": "doi",
       "resource_type": "dataset"
+    },
+    {
+      "identifier": "https://doi.org/10.5281/zenodo.21907598",
+      "relation": "hasPart",
+      "scheme": "doi",
+      "resource_type": "dataset"
     }
   ],
   "notes": "Depósito guarda-chuva gerado via GitHub Actions. Novos datasets do IBS devem ser adicionados aqui como 'hasPart' e referenciar este DOI como 'isPartOf' em seus próprios metadados."
