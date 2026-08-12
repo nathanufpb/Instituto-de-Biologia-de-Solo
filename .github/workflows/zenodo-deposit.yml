@@ -28,32 +28,39 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Validate project path
+      - name: Resolve project path
+        id: resolve_path
         run: |
-          PROJECT_PATH="publications/${{ inputs.project }}"
-          if [ ! -d "$PROJECT_PATH" ]; then
-            echo "::error::Diretório '$PROJECT_PATH' não encontrado."
+          PROJECT="${{ inputs.project }}"
+          if [ -d "publications/${PROJECT}" ]; then
+            PROJECT_PATH="publications/${PROJECT}"
+          elif [ -d "${PROJECT}" ]; then
+            PROJECT_PATH="${PROJECT}"
+          else
+            echo "::error::Diretório não encontrado em 'publications/${PROJECT}' nem na raiz '${PROJECT}'."
             exit 1
           fi
           if [ ! -f "${PROJECT_PATH}/.zenodo.json" ]; then
             echo "::error::Arquivo '${PROJECT_PATH}/.zenodo.json' não encontrado. Crie o arquivo de metadados antes de depositar."
             exit 1
           fi
+          echo "project_path=${PROJECT_PATH}" >> "$GITHUB_OUTPUT"
+          echo "Caminho resolvido: ${PROJECT_PATH}"
 
       - name: Create ZIP archive
         run: |
-          zip -r "${{ inputs.project }}.zip" "publications/${{ inputs.project }}/"
-          echo "Arquivo ZIP criado: ${{ inputs.project }}.zip ($(du -sh ${{ inputs.project }}.zip | cut -f1))"
+          SAFE_NAME=$(basename "${{ inputs.project }}")
+          zip -r "${SAFE_NAME}.zip" "${{ steps.resolve_path.outputs.project_path }}/"
+          echo "Arquivo ZIP criado: ${SAFE_NAME}.zip ($(du -sh ${SAFE_NAME}.zip | cut -f1))"
 
       - name: Create or new-version Zenodo deposit
         id: create_deposit
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: |
-          PROJECT="${{ inputs.project }}"
           ZENODO_ID="${{ inputs.zenodo_id }}"
           DRAFT_ID="${{ inputs.draft_id }}"
-          METADATA_FILE="publications/${PROJECT}/.zenodo.json"
+          METADATA_FILE="${{ steps.resolve_path.outputs.project_path }}/.zenodo.json"
 
           # A API do Zenodo espera os campos aninhados sob a chave "metadata"
           python3 -c "import json; d=json.load(open('${METADATA_FILE}')); json.dump({'metadata': d}, open('payload.json', 'w'))"
@@ -129,9 +136,9 @@ jobs:
           BUCKET_URL=$(python3 -c "import json; print(json.load(open('response.json'))['links']['bucket'])")
 
           UPLOAD_CODE=$(curl -s -o upload_response.json -w "%{http_code}" -X PUT \
-            "${BUCKET_URL}/${{ inputs.project }}.zip" \
+            "${BUCKET_URL}/$(basename "${{ inputs.project }}").zip" \
             -H "Authorization: Bearer ${ZENODO_TOKEN}" \
-            --upload-file "${{ inputs.project }}.zip")
+            --upload-file "$(basename "${{ inputs.project }}").zip")
           if [ "$UPLOAD_CODE" -ge 300 ]; then
             echo "::error::Falha no upload, HTTP ${UPLOAD_CODE}:"
             cat upload_response.json

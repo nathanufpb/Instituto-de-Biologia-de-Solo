@@ -44,3 +44,8 @@ references:
       critically endangered species rediscovered and redescribed in its
       habitat and food web
     doi: "10.5281/zenodo.21890449"
+  - type: dataset
+    title: >-
+      Bioindication and ecotoxicological tests protocols for the Neotropical
+      Region and a new regional model-species
+    doi: "10.5281/zenodo.21907598"
