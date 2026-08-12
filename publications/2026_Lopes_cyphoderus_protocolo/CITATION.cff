@@ -51,13 +51,13 @@ keywords:
 license: CC-BY-4.0
 repository-code: >-
   https://github.com/nathanufpb/Instituto-de-Biologia-de-Solo
-url: "https://doi.org/10.5281/zenodo.XXXXXXX"
-doi: "10.5281/zenodo.XXXXXXX"
+url: "https://doi.org/10.5281/zenodo.21907598"
+doi: "10.5281/zenodo.21907598"
 version: "1.0.0"
 date-released: "2026-08-12"
 identifiers:
   - type: doi
-    value: "10.5281/zenodo.XXXXXXX"
+    value: "10.5281/zenodo.21907598"
     description: Zenodo DOI for this dataset
 preferred-citation:
   type: article

@@ -1,6 +1,6 @@
 # Bioindication and Ecotoxicological Tests Protocols for the Neotropical Region (*Cyphoderus* sp.)
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.XXXXXXX.svg)](https://doi.org/10.5281/zenodo.XXXXXXX)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21907598.svg)](https://doi.org/10.5281/zenodo.21907598)
 
 Dados e materiais suplementares do artigo:
 
