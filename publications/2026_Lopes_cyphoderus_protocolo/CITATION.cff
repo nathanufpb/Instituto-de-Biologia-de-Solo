@@ -1,0 +1,98 @@
+cff-version: 1.2.0
+message: >-
+  Se você utilizar estes dados, por favor cite usando os metadados deste arquivo.
+type: dataset
+title: >-
+  Data and supplementary materials for: Bioindication and ecotoxicological
+  tests protocols for the Neotropical Region and a new regional model-species
+authors:
+  - family-names: Lopes
+    given-names: "Bruna Carolline Honório"
+    affiliation: "Instituto de Biologia do Solo (IBS), Laboratório de Sistemática de Collembola e Conservação (LSCC), Universidade Estadual da Paraíba (UEPB) Campus V"
+  - family-names: Amado
+    given-names: "Enelise Marcelle"
+    affiliation: "Instituto de Biologia do Solo (IBS); Laboratório de Ecofisiologia Animal (LEFA), Universidade Estadual da Paraíba (UEPB) Campus V"
+  - family-names: "de Lima"
+    given-names: "Estevam Araújo Cipriano"
+    affiliation: "Instituto de Biologia do Solo (IBS), Universidade Estadual da Paraíba (UEPB) Campus V"
+  - family-names: "de Oliveira-Neto"
+    given-names: "Misael Augusto"
+    affiliation: "Laboratório de Estudos Subterrâneos, Departamento de Ecologia e Biologia Evolutiva, Universidade Federal de São Carlos (UFSCar); PPG em Ecologia e Recursos Naturais, UFSCar"
+  - family-names: Soares
+    given-names: "Aila Ferreira"
+    affiliation: "Instituto de Biologia do Solo (IBS), Universidade Estadual da Paraíba (UEPB) Campus V"
+  - family-names: Brito
+    given-names: "Nathan Paiva"
+    affiliation: "Instituto de Biologia do Solo (IBS), UEPB Campus V; PPG em Ciências Biológicas (PPGCB), Universidade Federal da Paraíba (UFPB) Campus I"
+  - family-names: Rocha
+    given-names: "Patricia Keytth"
+    affiliation: "Instituto de Biologia do Solo (IBS), Universidade Estadual da Paraíba (UEPB) Campus V"
+  - family-names: Pontes
+    given-names: "Daniela Santos"
+    affiliation: "Instituto de Biologia do Solo (IBS); Laboratório de Biologia Molecular (LBM), Universidade Estadual da Paraíba (UEPB) Campus V"
+  - family-names: Zeppelini
+    given-names: Douglas
+    affiliation: "Instituto de Biologia do Solo (IBS), UEPB Campus V; PPG em Ciências Biológicas (PPGCB), Universidade Federal da Paraíba (UFPB) Campus I"
+abstract: >-
+  Dados e materiais suplementares referentes ao artigo submetido à revista
+  Ecotoxicology (Springer Nature, IF: 2.7): protocolos para testes de
+  bioindicação e ecotoxicologia na região Neotropical, incluindo a proposta de
+  uma nova espécie-modelo regional (Cyphoderus, Collembola). Artigo em revisão.
+keywords:
+  - Collembola
+  - Cyphoderus
+  - bioindicação
+  - ecotoxicologia
+  - espécie-modelo
+  - região neotropical
+  - protocolo
+  - fauna do solo
+  - biologia do solo
+license: CC-BY-4.0
+repository-code: >-
+  https://github.com/nathanufpb/Instituto-de-Biologia-de-Solo
+url: "https://doi.org/10.5281/zenodo.XXXXXXX"
+doi: "10.5281/zenodo.XXXXXXX"
+version: "1.0.0"
+date-released: "2026-08-12"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.XXXXXXX"
+    description: Zenodo DOI for this dataset
+preferred-citation:
+  type: article
+  authors:
+    - family-names: Lopes
+      given-names: "Bruna Carolline Honório"
+      affiliation: "Instituto de Biologia do Solo (IBS), Universidade Estadual da Paraíba (UEPB) Campus V"
+    - family-names: Amado
+      given-names: "Enelise Marcelle"
+      affiliation: "Universidade Estadual da Paraíba (UEPB) Campus V"
+    - family-names: "de Lima"
+      given-names: "Estevam Araújo Cipriano"
+      affiliation: "Universidade Estadual da Paraíba (UEPB) Campus V"
+    - family-names: "de Oliveira-Neto"
+      given-names: "Misael Augusto"
+      affiliation: "Universidade Federal de São Carlos (UFSCar)"
+    - family-names: Soares
+      given-names: "Aila Ferreira"
+      affiliation: "Universidade Estadual da Paraíba (UEPB) Campus V"
+    - family-names: Brito
+      given-names: "Nathan Paiva"
+      affiliation: "Universidade Federal da Paraíba (UFPB) Campus I"
+    - family-names: Rocha
+      given-names: "Patricia Keytth"
+      affiliation: "Universidade Estadual da Paraíba (UEPB) Campus V"
+    - family-names: Pontes
+      given-names: "Daniela Santos"
+      affiliation: "Universidade Estadual da Paraíba (UEPB) Campus V"
+    - family-names: Zeppelini
+      given-names: Douglas
+      affiliation: "Universidade Federal da Paraíba (UFPB) Campus I"
+  title: >-
+    Bioindication and ecotoxicological tests protocols for the Neotropical
+    Region and a new regional model-species
+  journal: "Ecotoxicology"
+  year: 2026
+  status: "in-review"
+  notes: "Artigo em processo de revisão por pares (Springer Nature, IF: 2.7). DOI e dados de periódico serão atualizados após a publicação."

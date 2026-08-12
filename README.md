@@ -39,8 +39,9 @@ Repositório centralizado de dados, scripts e materiais suplementares de publica
 
 | Projeto | DOI | Descrição |
 |---------|-----|-----------|
-| [2026_lima_neotropical_ento](publications/2026_lima_neotropical_ento/) | *pendente* | Taxonomia codificada de *Mucrosomia* (Collembola: Isotomidae) |
-| [2026_Zeppelini_troglobius](publications/2026_Zeppelini_troglobius/) | *pendente* | Filogenia de Collembola troglobio |
+| [2026_lima_neotropical_ento](publications/2026_lima_neotropical_ento/) | [10.5281/zenodo.21881749](https://doi.org/10.5281/zenodo.21881749) | Taxonomia codificada de *Mucrosomia* (Collembola: Isotomidae) |
+| [2026_Zeppelini_troglobius](publications/2026_Zeppelini_troglobius/) | [10.5281/zenodo.21890449](https://doi.org/10.5281/zenodo.21890449) | Redescoberta e redescrição de *Troglobius brasiliensis* (Collembola: Paronellidae) |
+| [2026_Lopes_cyphoderus_protocolo](publications/2026_Lopes_cyphoderus_protocolo/) | *pendente* | Protocolos de bioindicação e ecotoxicologia neotropical com nova espécie-modelo (*Cyphoderus*) |
 
 ## DOI por Projeto — Fluxo Zenodo
 

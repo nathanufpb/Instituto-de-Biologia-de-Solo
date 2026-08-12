@@ -1,0 +1,36 @@
+{
+  "title": "Data and supplementary materials for: Bioindication and ecotoxicological tests protocols for the Neotropical Region and a new regional model-species",
+  "description": "Dados e materiais suplementares referentes ao artigo: 'Bioindication and ecotoxicological tests protocols for the Neotropical Region and a new regional model-species' (Lopes et al., em revis\u00e3o, Ecotoxicology \u2014 Springer Nature). Inclui protocolos codificados e planilhas suplementares para testes de bioindica\u00e7\u00e3o e ecotoxicologia utilizando uma nova esp\u00e9cie-modelo regional neotropical de Collembola (Cyphoderus).",
+  "upload_type": "dataset",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "language": "eng",
+  "creators": [
+    {"name": "Lopes, Bruna Carolline Hon\u00f3rio", "affiliation": "Instituto de Biologia do Solo (IBS), Laborat\u00f3rio de Sistem\u00e1tica de Collembola e Conserva\u00e7\u00e3o (LSCC), Universidade Estadual da Para\u00edba (UEPB) Campus V"},
+    {"name": "Amado, Enelise Marcelle", "affiliation": "Instituto de Biologia do Solo (IBS), Universidade Estadual da Para\u00edba (UEPB) Campus V; Laborat\u00f3rio de Ecofisiologia Animal (LEFA), Universidade Estadual da Para\u00edba (UEPB) Campus V"},
+    {"name": "de Lima, Estevam Ara\u00fajo Cipriano", "affiliation": "Instituto de Biologia do Solo (IBS), Universidade Estadual da Para\u00edba (UEPB) Campus V"},
+    {"name": "de Oliveira-Neto, Misael Augusto", "affiliation": "Laborat\u00f3rio de Estudos Subterr\u00e2neos, Departamento de Ecologia e Biologia Evolutiva, Universidade Federal de S\u00e3o Carlos (UFSCar); Programa de P\u00f3s-Gradua\u00e7\u00e3o em Ecologia e Recursos Naturais, Universidade Federal de S\u00e3o Carlos (UFSCar)"},
+    {"name": "Soares, Aila Ferreira", "affiliation": "Instituto de Biologia do Solo (IBS), Universidade Estadual da Para\u00edba (UEPB) Campus V"},
+    {"name": "Brito, Nathan Paiva", "affiliation": "Instituto de Biologia do Solo (IBS), Universidade Estadual da Para\u00edba (UEPB) Campus V; Programa de P\u00f3s-Gradua\u00e7\u00e3o em Ci\u00eancias Biol\u00f3gicas (PPGCB), Departamento de Sistem\u00e1tica e Ecologia (DSE), Universidade Federal da Para\u00edba (UFPB) Campus I"},
+    {"name": "Rocha, Patricia Keytth", "affiliation": "Instituto de Biologia do Solo (IBS), Universidade Estadual da Para\u00edba (UEPB) Campus V"},
+    {"name": "Pontes, Daniela Santos", "affiliation": "Instituto de Biologia do Solo (IBS), Universidade Estadual da Para\u00edba (UEPB) Campus V; Laborat\u00f3rio de Biologia Molecular (LBM), Universidade Estadual da Para\u00edba (UEPB) Campus V"},
+    {"name": "Zeppelini, Douglas", "affiliation": "Instituto de Biologia do Solo (IBS), Universidade Estadual da Para\u00edba (UEPB) Campus V; Programa de P\u00f3s-Gradua\u00e7\u00e3o em Ci\u00eancias Biol\u00f3gicas (PPGCB), Departamento de Sistem\u00e1tica e Ecologia (DSE), Universidade Federal da Para\u00edba (UFPB) Campus I"}
+  ],
+  "contributors": [],
+  "keywords": [
+    "Collembola",
+    "Cyphoderus",
+    "bioindica\u00e7\u00e3o",
+    "ecotoxicologia",
+    "esp\u00e9cie-modelo",
+    "regi\u00e3o neotropical",
+    "protocolo",
+    "fauna do solo",
+    "biologia do solo"
+  ],
+  "communities": [
+    {"identifier": "ibs"}
+  ],
+  "journal_title": "Ecotoxicology",
+  "notes": "Dep\u00f3sito gerado via GitHub Actions. Para citar, utilize o DOI atribu\u00eddo pelo Zenodo. Artigo em revis\u00e3o por pares (Ecotoxicology, Springer Nature, IF: 2.7); DOI do artigo ser\u00e1 adicionado ap\u00f3s a publica\u00e7\u00e3o."
+}
