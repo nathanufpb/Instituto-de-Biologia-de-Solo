@@ -1,6 +1,6 @@
 # Instituto de Biologia do Solo — Coleção de Datasets e Publicações Científicas
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.PENDENTE.svg)](https://doi.org/10.5281/zenodo.PENDENTE)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21908379.svg)](https://doi.org/10.5281/zenodo.21908379)
 
 Este é o **registro guarda-chuva** (umbrella record) do Instituto de Biologia do Solo (IBS) no Zenodo. Ele não contém dados próprios — sua função é **agregar e referenciar** todos os datasets científicos publicados pelo instituto, fornecendo um ponto de entrada institucional único para descoberta e citação.
 

@@ -82,17 +82,19 @@ A licença de cada conjunto de dados é declarada no respectivo `.zenodo.json` e
 
 ## Como Citar
 
-Cada projeto tem seu próprio `CITATION.cff` e DOI Zenodo. Para citar o repositório institucional como um todo:
+Cada projeto tem seu próprio `CITATION.cff` e DOI Zenodo (ver tabela acima). Para citar o **IBS como um todo**, use o registro guarda-chuva institucional ([`colecao-institucional/`](colecao-institucional/)), que agrega todos os datasets publicados via relação `hasPart`:
 
 ```bibtex
 @dataset{ibs_dados,
   author    = {{Instituto de Biologia do Solo}},
-  title     = {Instituto de Biologia do Solo — Repositório de Dados},
+  title     = {Instituto de Biologia do Solo — Coleção de Datasets e Publicações Científicas},
   year      = {2026},
   publisher = {Zenodo},
-  doi       = {10.5281/zenodo.XXXXXXX}
+  doi       = {10.5281/zenodo.21908379}
 }
 ```
+
+DOI: [10.5281/zenodo.21908379](https://doi.org/10.5281/zenodo.21908379)
 
 ## Reprodutibilidade
 

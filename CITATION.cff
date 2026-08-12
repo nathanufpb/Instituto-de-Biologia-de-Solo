@@ -3,32 +3,27 @@
 
 cff-version: 1.2.0
 title: >-
-  Instituto de Biologia do Solo e Coleção de Referência da
-  Fauna de Solos - Repositório de Dados
+  Instituto de Biologia do Solo — Repositório de Dados
 message: >-
-  Se você utilizar dados deste repositório, por favor cite-o
-  usando os metadados deste arquivo.
+  Se você utilizar dados deste repositório, por favor cite o dataset
+  específico utilizado (ver publications/) ou, para citar o instituto como um
+  todo, use o registro guarda-chuva referenciado abaixo.
 type: dataset
 authors:
-  - name: >-
-      Instituto de Biologia do Solo e Coleção de Referência
-      da Fauna de Solos
-    city: '[Cidade]'
+  - name: "Instituto de Biologia do Solo"
     country: BR
-    website: '[URL do instituto]'
 repository-code: >-
   https://github.com/nathanufpb/Instituto-de-Biologia-de-Solo
 abstract: >-
-  Este repositório reúne conjuntos de dados, metadados,
-  scripts e materiais suplementares relacionados a estudos
-  de biologia do solo e fauna edáfica. O objetivo é garantir
-  transparência, reprodutibilidade e acesso aberto aos dados,
-  seguindo os princípios FAIR (Findable, Accessible,
-  Interoperable, Reusable) e as melhores práticas de ciência
-  aberta. Os dados seguem padrões internacionais como Darwin
-  Core para dados de biodiversidade, e são disponibilizados
-  sob licenças abertas (CC0/CC BY 4.0) para promover máxima
-  reutilização científica.
+  Este repositório reúne conjuntos de dados, metadados, scripts e materiais
+  suplementares relacionados a publicações científicas do Instituto de
+  Biologia do Solo (IBS). Cada publicação é depositada individualmente no
+  Zenodo com DOI próprio (ver publications/); o registro guarda-chuva
+  institucional (colecao-institucional/) agrega todos os datasets publicados
+  por meio da relação 'hasPart'. O objetivo é garantir transparência,
+  reprodutibilidade e acesso aberto aos dados, seguindo os princípios FAIR
+  (Findable, Accessible, Interoperable, Reusable) e as melhores práticas de
+  ciência aberta.
 keywords:
   - biologia do solo
   - fauna edáfica
@@ -43,23 +38,23 @@ keywords:
 license: CC-BY-4.0
 license-url: 'https://creativecommons.org/licenses/by/4.0/'
 version: 1.0.0
-date-released: '2026-01-09'
-doi: 10.5281/zenodo.XXXXXXX
+date-released: '2026-08-12'
+doi: 10.5281/zenodo.21908379
 identifiers:
   - type: doi
-    value: 10.5281/zenodo.XXXXXXX
-    description: Zenodo DOI for this repository
+    value: 10.5281/zenodo.21908379
+    description: >-
+      DOI do registro guarda-chuva institucional (colecao-institucional/) que
+      agrega todos os datasets publicados pelo IBS
 preferred-citation:
   type: dataset
   authors:
-    - name: >-
-        Instituto de Biologia do Solo e Coleção de Referência
-        da Fauna de Solos
+    - name: "Instituto de Biologia do Solo"
   title: >-
-    Instituto de Biologia do Solo e Coleção de Referência da
-    Fauna de Solos - Repositório de Dados
+    Instituto de Biologia do Solo — Coleção de Datasets e Publicações
+    Científicas
   year: 2026
-  doi: 10.5281/zenodo.XXXXXXX
-  url: 'https://github.com/nathanufpb/Instituto-de-Biologia-de-Solo'
+  doi: 10.5281/zenodo.21908379
+  url: 'https://doi.org/10.5281/zenodo.21908379'
   repository-code: >-
     https://github.com/nathanufpb/Instituto-de-Biologia-de-Solo
