@@ -27,6 +27,8 @@ Este repositório contém os dados moleculares e scripts utilizados no estudo da
 │       └── alinhamento_macse_atual.partitions.nex.contree.jpg  # Árvore ML com suporte UFBoot
 ├── taxonomy-delta/
 │   └── Paronellidae coded taxonomy.dtz/  # Projeto DELTA (taxonomia codificada de Paronellidae)
+├── media/
+│   └── video-institucional.mp4         # Vídeo institucional sobre a redescoberta da espécie
 └── data/                               # Dados brutos e processados (a preencher)
 ```
 
