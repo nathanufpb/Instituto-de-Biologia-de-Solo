@@ -11,6 +11,10 @@ on:
         description: 'DOI do registro que substitui este (ex: 10.5281/zenodo.21908379)'
         required: true
         type: string
+      existing_draft_id:
+        description: 'ID de rascunho de nova versão já criado (pula a criação de nova versão)'
+        required: false
+        type: string
       attempt_delete:
         description: 'Tentar excluir o registro após marcar como obsoleto?'
         required: true
@@ -39,6 +43,7 @@ jobs:
 
       - name: Create new version with obsolete marker
         id: newversion
+        if: ${{ inputs.existing_draft_id == '' }}
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
         run: |
@@ -55,10 +60,19 @@ jobs:
           echo "draft_id=${DRAFT_ID}" >> "$GITHUB_OUTPUT"
           echo "Rascunho da nova versão: ${DRAFT_ID}"
 
+      - name: Resolve draft id
+        id: resolve_draft
+        run: |
+          if [ -n "${{ inputs.existing_draft_id }}" ]; then
+            echo "draft_id=${{ inputs.existing_draft_id }}" >> "$GITHUB_OUTPUT"
+          else
+            echo "draft_id=${{ steps.newversion.outputs.draft_id }}" >> "$GITHUB_OUTPUT"
+          fi
+
       - name: Update metadata marking as obsolete
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-          DRAFT_ID: ${{ steps.newversion.outputs.draft_id }}
+          DRAFT_ID: ${{ steps.resolve_draft.outputs.draft_id }}
         run: |
           python3 << 'PYEOF'
           import json
@@ -66,11 +80,17 @@ jobs:
           with open("record.json") as f:
               original = json.load(f)["metadata"]
 
-          # Remove campos somente-leitura que a API rejeita no update
+          # A API de depósito espera valores simples, não os objetos aninhados da API pública
           for field in ("doi", "prereserve_doi", "publication_date"):
               original.pop(field, None)
+          if isinstance(original.get("resource_type"), dict):
+              original["resource_type"] = original["resource_type"]["type"]
+          if isinstance(original.get("license"), dict):
+              original["license"] = original["license"]["id"]
+          if isinstance(original.get("communities"), list):
+              original["communities"] = [c for c in original["communities"] if isinstance(c, dict) and "identifier" in c]
 
-          original["title"] = "[OBSOLETO] " + original["title"]
+          original["title"] = "[OBSOLETO] " + original["title"].removeprefix("[OBSOLETO] ")
           original["notes"] = (
               "ESTE REGISTRO ESTÁ OBSOLETO. Foi substituído pelo registro guarda-chuva "
               f"oficial do Instituto de Biologia do Solo: {{superseded}}. "
@@ -104,7 +124,7 @@ jobs:
         id: publish
         env:
           ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
-          DRAFT_ID: ${{ steps.newversion.outputs.draft_id }}
+          DRAFT_ID: ${{ steps.resolve_draft.outputs.draft_id }}
         run: |
           HTTP_CODE=$(curl -s -o publish_response.json -w "%{http_code}" -X POST \
             "https://zenodo.org/api/deposit/depositions/${DRAFT_ID}/actions/publish" \
