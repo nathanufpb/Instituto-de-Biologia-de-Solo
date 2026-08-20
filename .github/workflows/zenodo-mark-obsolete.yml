@@ -1,0 +1,151 @@
+name: Zenodo Mark Obsolete / Delete
+
+on:
+  workflow_dispatch:
+    inputs:
+      deposit_id:
+        description: 'ID do depósito Zenodo a ser marcado como obsoleto (ex: 19055009)'
+        required: true
+        type: string
+      superseded_by_doi:
+        description: 'DOI do registro que substitui este (ex: 10.5281/zenodo.21908379)'
+        required: true
+        type: string
+      attempt_delete:
+        description: 'Tentar excluir o registro após marcar como obsoleto?'
+        required: true
+        type: boolean
+        default: false
+
+jobs:
+  mark-obsolete:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Fetch current record metadata
+        id: fetch
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: |
+          HTTP_CODE=$(curl -s -o record.json -w "%{http_code}" \
+            "https://zenodo.org/api/records/${{ inputs.deposit_id }}" \
+            -H "Authorization: Bearer ${ZENODO_TOKEN}")
+          if [ "$HTTP_CODE" -ge 300 ]; then
+            echo "::error::Não foi possível ler o registro, HTTP ${HTTP_CODE}:"
+            cat record.json
+            exit 1
+          fi
+          echo "Registro encontrado:"
+          python3 -c "import json; d=json.load(open('record.json')); print(d['metadata']['title'])"
+
+      - name: Create new version with obsolete marker
+        id: newversion
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: |
+          HTTP_CODE=$(curl -s -o newversion_response.json -w "%{http_code}" -X POST \
+            "https://zenodo.org/api/deposit/depositions/${{ inputs.deposit_id }}/actions/newversion" \
+            -H "Authorization: Bearer ${ZENODO_TOKEN}")
+          if [ "$HTTP_CODE" -ge 300 ]; then
+            echo "::error::Falha ao criar nova versão, HTTP ${HTTP_CODE}:"
+            cat newversion_response.json
+            exit 1
+          fi
+          DRAFT_URL=$(python3 -c "import json; print(json.load(open('newversion_response.json'))['links']['latest_draft'])")
+          DRAFT_ID=$(basename "$DRAFT_URL")
+          echo "draft_id=${DRAFT_ID}" >> "$GITHUB_OUTPUT"
+          echo "Rascunho da nova versão: ${DRAFT_ID}"
+
+      - name: Update metadata marking as obsolete
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          DRAFT_ID: ${{ steps.newversion.outputs.draft_id }}
+        run: |
+          python3 << 'PYEOF'
+          import json
+
+          with open("record.json") as f:
+              original = json.load(f)["metadata"]
+
+          # Remove campos somente-leitura que a API rejeita no update
+          for field in ("doi", "prereserve_doi", "publication_date"):
+              original.pop(field, None)
+
+          original["title"] = "[OBSOLETO] " + original["title"]
+          original["notes"] = (
+              "ESTE REGISTRO ESTÁ OBSOLETO. Foi substituído pelo registro guarda-chuva "
+              f"oficial do Instituto de Biologia do Solo: {{superseded}}. "
+              "Este registro era um snapshot automático gerado via integração GitHub-Zenodo "
+              "de um repositório legado e não reflete a estrutura atual de dados do instituto."
+          ).replace("{superseded}", "${{ inputs.superseded_by_doi }}")
+          original.setdefault("related_identifiers", [])
+          original["related_identifiers"].append({
+              "identifier": "${{ inputs.superseded_by_doi }}",
+              "relation": "isObsoletedBy",
+              "scheme": "doi"
+          })
+
+          with open("payload.json", "w") as f:
+              json.dump({"metadata": original}, f)
+          PYEOF
+
+          HTTP_CODE=$(curl -s -o update_response.json -w "%{http_code}" -X PUT \
+            "https://zenodo.org/api/deposit/depositions/${DRAFT_ID}" \
+            -H "Authorization: Bearer ${ZENODO_TOKEN}" \
+            -H "Content-Type: application/json" \
+            --data-binary "@payload.json")
+          if [ "$HTTP_CODE" -ge 300 ]; then
+            echo "::error::Falha ao atualizar metadados, HTTP ${HTTP_CODE}:"
+            cat update_response.json
+            exit 1
+          fi
+          echo "Metadados atualizados com sucesso no rascunho ${DRAFT_ID}."
+
+      - name: Publish obsolete-marked version
+        id: publish
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+          DRAFT_ID: ${{ steps.newversion.outputs.draft_id }}
+        run: |
+          HTTP_CODE=$(curl -s -o publish_response.json -w "%{http_code}" -X POST \
+            "https://zenodo.org/api/deposit/depositions/${DRAFT_ID}/actions/publish" \
+            -H "Authorization: Bearer ${ZENODO_TOKEN}")
+          if [ "$HTTP_CODE" -ge 300 ]; then
+            echo "::error::Falha ao publicar, HTTP ${HTTP_CODE}:"
+            cat publish_response.json
+            exit 1
+          fi
+          DOI=$(python3 -c "import json; print(json.load(open('publish_response.json'))['doi'])")
+          echo "doi=${DOI}" >> "$GITHUB_OUTPUT"
+          echo "Nova versão (marcada como obsoleta) publicada: https://doi.org/${DOI}"
+
+      - name: Attempt deletion (best-effort)
+        if: ${{ inputs.attempt_delete == true }}
+        env:
+          ZENODO_TOKEN: ${{ secrets.ZENODO_TOKEN }}
+        run: |
+          HTTP_CODE=$(curl -s -o delete_response.json -w "%{http_code}" -X DELETE \
+            "https://zenodo.org/api/deposit/depositions/${{ inputs.deposit_id }}" \
+            -H "Authorization: Bearer ${ZENODO_TOKEN}")
+          echo "HTTP retornado pela tentativa de exclusão: ${HTTP_CODE}"
+          cat delete_response.json || true
+          if [ "$HTTP_CODE" -ge 300 ]; then
+            echo "::warning::Exclusão não permitida pela API (esperado para registros publicados com DOI ativo). Use o link 'request_deletion' do registro para abrir um pedido manual junto ao suporte do Zenodo."
+          else
+            echo "Registro excluído com sucesso."
+          fi
+
+      - name: Job summary
+        if: always()
+        env:
+          DOI: ${{ steps.publish.outputs.doi }}
+        run: |
+          echo "## Marcação de obsolescência — depósito ${{ inputs.deposit_id }}" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Campo | Valor |" >> "$GITHUB_STEP_SUMMARY"
+          echo "|-------|-------|" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Registro original | ${{ inputs.deposit_id }} |" >> "$GITHUB_STEP_SUMMARY"
+          echo "| Substituído por | ${{ inputs.superseded_by_doi }} |" >> "$GITHUB_STEP_SUMMARY"
+          if [ -n "${DOI}" ]; then
+            echo "| Nova versão (obsoleta) | [https://doi.org/${DOI}](https://doi.org/${DOI}) |" >> "$GITHUB_STEP_SUMMARY"
+          fi
+          echo "| Exclusão tentada | ${{ inputs.attempt_delete }} |" >> "$GITHUB_STEP_SUMMARY"
