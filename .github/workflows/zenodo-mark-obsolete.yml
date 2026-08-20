@@ -81,10 +81,14 @@ jobs:
               original = json.load(f)["metadata"]
 
           # A API de depósito espera valores simples, não os objetos aninhados da API pública
-          for field in ("doi", "prereserve_doi", "publication_date"):
+          for field in ("doi", "prereserve_doi", "publication_date", "custom", "version"):
               original.pop(field, None)
-          if isinstance(original.get("resource_type"), dict):
-              original["resource_type"] = original["resource_type"]["type"]
+          # API de depósito legada usa "upload_type", não "resource_type" (formato da API pública nova)
+          rt = original.pop("resource_type", None)
+          if isinstance(rt, dict):
+              original["upload_type"] = rt["type"]
+          elif isinstance(rt, str):
+              original["upload_type"] = rt
           if isinstance(original.get("license"), dict):
               original["license"] = original["license"]["id"]
           if isinstance(original.get("communities"), list):
